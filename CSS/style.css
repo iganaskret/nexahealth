@@ -16,27 +16,76 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overscroll-behavior: none;
 }
 
 /* Header, subheader and main text styles */
 .header {
   font-weight: 700;
-  font-size: 55px;
+  font-size: 45px;
 }
 
 .subheader {
   font-family: var(--secondary-font);
   font-weight: 700;
-  font-size: 35px;
+  font-size: 25px;
 }
 
 .content {
-  font-size: 30px;
+  font-size: 20px;
 }
 
 /* Navigation */
-.main-logo {
-  width: 100%;
+nav {
+  margin-top: 30px;
+  text-align: center;
+  position: relative;
+}
+
+/* Logo */
+.logo {
+  width: 20%;
+  display: inline-block;
+}
+
+/* Burger menu */
+.burger-menu {
+  position: relative;
+  display: inline-block;
+  position: absolute;
+  top: 45px;
+  left: 35px;
+}
+
+.burger {
+  position: absolute;
+  background-color: var(--main-text-color);
+  display: block;
+  width: 30px;
+  height: 10px;
+  top: 10%;
+  left: 20px;
+  margin-top: -5px;
+}
+
+.burger:before {
+  position: absolute;
+  content: "";
+  background-color: var(--main-text-color);
+  display: block;
+  width: 50px;
+  height: 10px;
+  top: 20px;
+}
+
+.burger:after {
+  position: absolute;
+  content: "";
+  background-color: var(--main-text-color);
+  display: block;
+  width: 50px;
+  height: 10px;
+  bottom: 20px;
 }
 
 /* Animation */
@@ -46,6 +95,11 @@ body {
 
 /* Homepage content */
 .homepage-content {
+  background-image: url("../Images/background.png");
   background-color: var(--main-text-color);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
   color: var(--secondary-color);
 }
