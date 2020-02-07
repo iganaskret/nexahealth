@@ -1,5 +1,5 @@
 // Variables
-const postLink = "http://iganaskret.com/wpv1/wp-json/wp/v2/nexa_health?_embed";
+const postLink = "https://nexahealth.dk/wp-json/wp/v2/posts?_embed";
 const template = document.querySelector("template").content;
 const burgerMenu = document.querySelector(".burger-menu");
 
@@ -16,6 +16,8 @@ function loadSVG(data) {
 // Open / close burger menu
 burgerMenu.addEventListener("click", () => {
   burgerMenu.classList.toggle("menu-on");
+  document.querySelector(".menu").classList.toggle("hide");
+  document.querySelector("body").classList.toggle("no-scroll");
 });
 
 // Fetch and display from Wordpress

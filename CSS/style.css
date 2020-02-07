@@ -19,6 +19,14 @@ body {
   overscroll-behavior: none;
 }
 
+.hide {
+  display: none;
+}
+
+.no-scroll {
+  overflow-y: hidden;
+}
+
 /* Header, subheader and main text styles */
 .header {
   font-weight: 700;
@@ -44,27 +52,30 @@ nav {
 
 /* Logo */
 .logo {
-  width: 20%;
+  width: 22%;
+  min-width: 200px;
   display: inline-block;
 }
 
 /* Burger menu */
 .burger-menu {
-  position: relative;
-  display: inline-block;
   position: absolute;
-  top: 45px;
-  left: 35px;
+  display: inline-block;
+  top: 25px;
+  left: 30px;
+  padding: 40px;
+  z-index: 99;
+  cursor: pointer;
 }
 
 .burger {
   position: absolute;
   background-color: var(--main-text-color);
   display: block;
-  width: 30px;
-  height: 10px;
-  top: 10%;
-  left: 20px;
+  width: 26px;
+  height: 8px;
+  top: 25px;
+  left: 30px;
   margin-top: -5px;
 }
 
@@ -73,9 +84,9 @@ nav {
   content: "";
   background-color: var(--main-text-color);
   display: block;
-  width: 50px;
-  height: 10px;
-  top: 20px;
+  width: 40px;
+  height: 8px;
+  top: 15px;
 }
 
 .burger:after {
@@ -83,9 +94,60 @@ nav {
   content: "";
   background-color: var(--main-text-color);
   display: block;
-  width: 50px;
-  height: 10px;
-  bottom: 20px;
+  width: 40px;
+  height: 8px;
+  bottom: 15px;
+}
+
+.burger::after,
+.burger::before,
+.burger {
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+}
+.burger-menu.menu-on .burger::after {
+  transform: rotate(-45deg);
+  background-color: var(--main-color);
+  -webkit-transform: rotate(-45deg);
+  bottom: 0px;
+}
+.burger-menu.menu-on .burger::before {
+  transform: rotate(45deg);
+  background-color: var(--main-color);
+  -webkit-transform: rotate(45deg);
+  top: 0px;
+}
+.burger-menu.menu-on .burger {
+  width: 0;
+}
+
+/* Menu */
+.menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 98;
+  background-color: var(--main-text-color);
+  color: var(--main-color);
+}
+
+.menu ul {
+  text-align: center;
+  list-style: none;
+  margin-top: 230px;
+}
+
+.menu li {
+  margin: 20px;
+  font-size: 35px;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.menu li:hover {
+  opacity: 1;
 }
 
 /* Animation */
