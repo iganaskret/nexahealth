@@ -34,10 +34,10 @@ function typewriting() {
     setTimeout(loaded, 1000);
   }
 }
-// typewriting();
+typewriting();
 
 //delete this line!
-loaded();
+// loaded();
 
 function loaded() {
   loaderWrapper.classList.add("fade-out-menu");
