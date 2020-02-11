@@ -14,10 +14,10 @@
   --v-width: 0;
 }
 
-html {
+/* html {
   scroll-snap-type: y mandatory;
   scroll-snap-stop: always;
-}
+} */
 
 body {
   font-family: var(--font);
@@ -27,13 +27,13 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* overscroll-behavior: none; */
+  overflow: hidden;
 }
 
-main div,
+/* main section,
 footer {
   scroll-snap-align: start;
-}
+} */
 
 .body-loaded {
   background-color: var(--main-color);
@@ -153,26 +153,29 @@ footer {
 
 /* Navigation */
 nav {
-  margin-top: 30px;
+  /* margin-top: 30px; */
   text-align: center;
   position: relative;
+  z-index: 97;
+  background-color: var(--main-color);
 }
 
 /* Logo */
 .logo {
-  width: 22%;
-  min-width: 400px;
+  width: 15%;
+  min-width: 300px;
   display: inline-block;
+  padding: 10px;
 }
 
 /* Burger menu */
 .burger-menu {
   position: absolute;
   display: inline-block;
-  top: 25px;
+  top: 35px;
   left: 30px;
   padding: 40px;
-  z-index: 99;
+  z-index: 110;
   cursor: pointer;
 }
 
@@ -218,12 +221,14 @@ nav {
   background-color: var(--main-color);
   -webkit-transform: rotate(-45deg);
   bottom: 0px;
+  z-index: 998;
 }
 .burger-menu.menu-on .burger::before {
   transform: rotate(45deg);
   background-color: var(--main-color);
   -webkit-transform: rotate(45deg);
   top: 0px;
+  z-index: 999;
 }
 .burger-menu.menu-on .burger {
   width: 0;
@@ -285,7 +290,7 @@ nav {
 }
 
 /* Homepage content */
-.homepage-content {
+#homepage-content {
   background-image: url("../Images/background.png");
   background-color: var(--main-text-color);
   background-position: center;
@@ -299,7 +304,7 @@ nav {
 }
 
 /* Subscription*/
-.subscription {
+#subscription {
   height: 100vh;
 }
 
@@ -321,10 +326,19 @@ nav {
   font-family: var(--font);
   font-size: 1.3em;
   margin-top: 45vh;
+  -webkit-transition: background-color 200ms linear;
+  -ms-transition: background-color 200ms linear;
+  transition: background-color 200ms linear;
+  -webkit-transition: color 200ms linear;
+  -ms-transition: color 200ms linear;
+  transition: color 200ms linear;
 }
 
 .subscription-grid div {
   height: 100vh;
+  -webkit-transition: background-color 200ms linear;
+  -ms-transition: background-color 200ms linear;
+  transition: background-color 200ms linear;
 }
 
 .subscription-grid div:hover {
@@ -338,6 +352,8 @@ nav {
 
 /* Footer */
 footer {
+  position: absolute;
+  bottom: 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   background-color: var(--accent-color);

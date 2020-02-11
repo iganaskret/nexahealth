@@ -34,6 +34,7 @@ function loadSVGlogo(data) {
 burgerMenu.addEventListener("click", () => {
   burgerMenu.classList.toggle("menu-on");
   if (burgerMenu.classList.contains("menu-on")) {
+    document.querySelector("nav").style.zIndex = "auto";
     root.style.setProperty("--opacity1", "0");
     root.style.setProperty("--opacity2", "1");
     document.querySelector(".menu").classList.remove("hide");
@@ -42,6 +43,7 @@ burgerMenu.addEventListener("click", () => {
       document.querySelector(".menu").classList.remove("fade-in-menu");
     }, 500);
   } else {
+    document.querySelector("nav").style.zIndex = "97";
     root.style.setProperty("--opacity1", "1");
     root.style.setProperty("--opacity2", "0");
     document.querySelector(".menu").classList.add("fade-out-menu");
