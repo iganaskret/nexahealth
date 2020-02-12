@@ -7,7 +7,6 @@ var slider = function(sliderElement) {
 
   var init = function() {
     document.body.classList.add("slider__body");
-
     // control scrolling
     whatWheel =
       "onwheel" in document.createElement("div")
@@ -33,6 +32,13 @@ var slider = function(sliderElement) {
       }
     });
 
+    //arrow down
+    document.querySelectorAll(".arrow-down").forEach(arrow => {
+      arrow.addEventListener("click", () => {
+        changeSlide(1);
+      });
+    });
+
     // page change animation is done
     detectChangeEnd() &&
       document
@@ -41,36 +47,41 @@ var slider = function(sliderElement) {
           if (isChanging) {
             setTimeout(function() {
               isChanging = false;
-              // window.location.hash = document.querySelector(
-              //   '[data-slider-index="' + currentSlide + '"]'
-              // ).id;
-            }, 1000);
+              console.log(currentSlide);
+              if (currentSlide === 2) {
+                // document.querySelectorAll(".post-chunk").forEach(chunk => {
+                //   chunk.classList.add("fade-chunks");
+                // });
+                for (let i = 0; i < 5; i++) {
+                  if (i == 0) {
+                    document
+                      .querySelectorAll(".post-chunk")
+                      [i].classList.add("fade-chunks");
+                  } else {
+                    setTimeout(function() {
+                      document
+                        .querySelectorAll(".post-chunk")
+                        [i].classList.add("fade-chunks");
+                      // console.log(document.querySelectorAll(".post-chunk")[i]);
+                    }, 2000 * i);
+                  }
+                }
+              }
+            }, 800);
           }
         });
 
-    // set up page and build visual indicators
+    // set up page
     document.querySelector(sliderElement).classList.add("slider__container");
-    // var indicatorContainer = document.createElement('div');
-    // indicatorContainer.classList.add('slider__indicators');
 
     var index = 1;
     [].forEach.call(document.querySelectorAll(sliderElement + " > *"), function(
       section
     ) {
-      //   var indicator = document.createElement('a');
-      //   indicator.classList.add('slider__indicator')
-      //   indicator.setAttribute('data-slider-target-index', index);
-      //   indicatorContainer.appendChild(indicator);
-
       section.classList.add("slider__page");
       pages.push(section);
       section.setAttribute("data-slider-index", index++);
     });
-
-    // document.body.appendChild(indicatorContainer);
-    document
-      .querySelector('a[data-slider-target-index = "' + currentSlide + '"]')
-      .classList.add("slider__indicator--active");
 
     // stuff for touch devices
     var touchStartPos = 0;
@@ -152,14 +163,6 @@ var slider = function(sliderElement) {
     changeCss(document.querySelector(sliderElement), {
       transform: "translate3d(0, " + -(currentSlide - 1) * 100 + "%, 0)"
     });
-
-    // change dots
-    // document
-    //   .querySelector("a.slider__indicator--active")
-    //   .classList.remove("slider__indicator--active");
-    // document
-    //   .querySelector('a[data-slider-target-index="' + currentSlide + '"]')
-    //   .classList.add("slider__indicator--active");
   };
 
   // go to spesific slide if it exists

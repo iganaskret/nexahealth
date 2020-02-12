@@ -68,12 +68,18 @@ function showData(data) {
     //clone
     const clone = template.cloneNode(true);
     //populate
-    const postContent = clone.querySelector(".post-content");
-    if (post.title.rendered === "Patients") {
-      postContent.innerHTML = post.content.rendered;
+    if (
+      document
+        .querySelector(".post-container")
+        .classList.contains("fade-in-posts")
+    ) {
+      const postContent = clone.querySelector(".post-content");
+      if (post.title.rendered === "Patients") {
+        postContent.innerHTML = post.content.rendered;
 
-      //append
-      document.querySelector(".post-container").appendChild(clone);
+        //append
+        document.querySelector(".post-container").appendChild(clone);
+      }
     }
   });
 }
