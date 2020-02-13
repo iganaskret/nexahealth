@@ -6,7 +6,7 @@ const body = document.querySelector("body");
 const content = document.querySelector(".content");
 const burgerMenu = document.querySelector(".burger-menu");
 const loaderWrapper = document.querySelector(".wrapper");
-let user = document.querySelector(".user-type span").textContent;
+let user = document.querySelector(".user-type .disabled").textContent;
 console.log(user);
 loaded();
 

@@ -7,7 +7,7 @@
     <link href="CSS/style.css" type="text/css" rel="stylesheet" media="all" />
     <title>NEXA Health</title>
   </head>
-  <body class="body-loaded">
+  <body>
     <!-- Loader -->
     <!-- <div class="wrapper"></div> -->
     <!-- Navigation -->
@@ -21,18 +21,40 @@
         /></a>
       </div>
       <div class="user-type">
-        <a href="schedule.html?citizen" id="citizen-link">Citizen</a>
+        <a href="subscription.html?citizen" id="citizen-link">Citizen</a>
         <span> / </span>
-        <a href="schedule.html?health-professional" id="hp-link"
+        <a href="subscription.html?health-professional" id="hp-link"
           >Health professional</a
         >
       </div>
     </nav>
     <!-- Content of the homepage -->
-    <div class="schedule-content">
+    <div>
       <!-- Main content  -->
-      <main class="schedule">
-        <section></section>
+      <main class="subscription">
+        <section>
+          <div class="subscription-form">
+            <form>
+              <label for="fname">My name is </label>
+              <input type="text" id="fname" name="fname" />
+              <label for="type">. I am </label>
+
+              <select id="type">
+                <option value="citizen" id="citizen">a citizen</option>
+                <option value="health professional" id="hp"
+                  >a health professional</option
+                >
+              </select>
+              <label for="email">
+                and I am interested in NEXA. I'd like to be updated on my e-mail
+                address
+              </label>
+              <input type="email" id="email" name="email" />
+              <span>.</span> <br />
+              <input type="submit" />
+            </form>
+          </div>
+        </section>
       </main>
       <!-- Footer -->
       <!-- <footer>
@@ -51,7 +73,7 @@
           <li><a href="" id="menu-link">HOMEPAGE</a></li>
           <li><a href="" class="menu-link-subpage">VISION</a></li>
           <li><a href="" class="menu-link-subpage">TEAM</a></li>
-          <li class="active">SUBSCRIPTION</li>
+          <li><a href="" class="menu-link-subpage">SUBSCRIPTION</a></li>
         </ul>
       </div>
     </div>

@@ -66,10 +66,20 @@ function typeOfUser(url) {
     document
       .querySelector("#menu-link")
       .setAttribute("href", "health-professional.html");
+    document.querySelectorAll(".menu-link-subpage").forEach(link => {
+      page = link.textContent;
+      link.setAttribute("href", page + ".html?health-professional");
+    });
     document.querySelector("#hp").setAttribute("selected", true);
+    document.querySelector("#hp-link-schedule").classList.add("disabled");
   } else {
+    document.querySelectorAll(".menu-link-subpage").forEach(link => {
+      page = link.textContent;
+      link.setAttribute("href", page + ".html?citizen");
+    });
     document.querySelector("#citizen").setAttribute("selected", true);
     document.querySelector("#logo-link").setAttribute("href", "citizen.html");
     document.querySelector("#menu-link").setAttribute("href", "citizen.html");
+    document.querySelector("#citizen-link-schedule").classList.add("disabled");
   }
 }

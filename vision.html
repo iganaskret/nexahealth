@@ -5,62 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link href="CSS/style.css" type="text/css" rel="stylesheet" media="all" />
-    <link rel="stylesheet" href="JavaScript/page-slider-js-master/slider.css" />
-    <script src="JavaScript/page-slider-js-master/slider.js"></script>
     <title>NEXA Health</title>
   </head>
-  <body>
+  <body class="body-loaded">
     <!-- Loader -->
-    <div class="wrapper"></div>
+    <!-- <div class="wrapper"></div> -->
     <!-- Navigation -->
     <nav>
       <div class="burger-menu">
         <div class="burger"></div>
       </div>
       <div>
-        <img class="logo" src="Images/logo-final-1.svg" alt="logo" />
+        <a href="" id="logo-link"
+          ><img class="logo" src="Images/logo-final-1.svg" alt="logo"
+        /></a>
       </div>
       <div class="user-type">
-        <span>Citizen</span> <span> / </span>
-        <a href="health-professional.html">Health professional</a>
+        <a href="vision.html?citizen" id="citizen-link">Citizen</a>
+        <span> / </span>
+        <a href="vision.html?health-professional" id="hp-link"
+          >Health professional</a
+        >
       </div>
     </nav>
     <!-- Content of the homepage -->
-    <div class="content hide">
+    <div class="vision-content">
       <!-- Main content  -->
-      <main class="slides">
-        <section id="landing">
-          <div class="animation">Here goes the animation</div>
-          <div class="arrow-down">
-            <span></span>
-            <span></span>
-          </div>
-        </section>
-        <section id="homepage-content">
-          <div class="post-container fade-in-posts"></div>
-          <div class="arrow-down blue">
-            <span></span>
-            <span></span>
-          </div>
-          <div class="video">
-            <video width="320" height="640" autoplay id="chatbox-video">
-              <source src="Images/Chatbot.ogg" type="video/ogg" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </section>
-        <section id="subscription">
-          <div class="subscription-grid">
-            <div class="subscribe">
-              <a href="schedule.html?citizen"><button>Subscribe</button></a>
-            </div>
-            <div class="schedule">
-              <a href="schedule.html?citizen"
-                ><button>Schedule a meeting</button></a
-              >
-            </div>
-          </div>
-        </section>
+      <main class="vision">
+        <div class="post-container animation"></div>
       </main>
       <!-- Footer -->
       <!-- <footer>
@@ -76,10 +48,10 @@
       <!-- Menu -->
       <div class="menu hide">
         <ul class="subheader">
-          <li class="active">HOMEPAGE</li>
-          <li><a href="vision.html?citizen">VISION</a></li>
-          <li><a href="team.html?citizen">TEAM</a></li>
-          <li><a href="subscription.html?citizen">SUBSCRIPTION</a></li>
+          <li><a href="" id="menu-link">HOMEPAGE</a></li>
+          <li class="active">VISION</li>
+          <li><a href="" class="menu-link-subpage">TEAM</a></li>
+          <li><a href="" class="menu-link-subpage">SUBSCRIPTION</a></li>
         </ul>
       </div>
     </div>
@@ -88,13 +60,9 @@
   <template>
     <div class="post">
       <!-- <h1 class="post-header header">Header</h1>
-      <h2 class="post-subheader subheader">Subheader</h2> -->
+          <h2 class="post-subheader subheader">Subheader</h2> -->
       <p class="post-content content">Content</p>
     </div>
   </template>
   <script src="JavaScript/script-subpage.js"></script>
-
-  <!-- <script>
-    let mySlider = slider(".slides");
-  </script> -->
 </html>

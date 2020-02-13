@@ -154,13 +154,25 @@ nav {
 .user-type a {
   color: var(--main-text-color);
   text-decoration: none;
+}
+
+.user-type span,
+.user-type a {
+  font-weight: 400;
   font-size: 15px;
 }
 
-.user-type span:first-of-type {
+.user-type .disabled {
+  pointer-events: none;
+  cursor: default;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* .user-type a {
   font-weight: 600;
   font-size: 20px;
-}
+} */
 
 /* Burger menu */
 .burger-menu {
@@ -421,22 +433,22 @@ nav {
   color: var(--main-text-color);
 }
 
-/* Schedule a meeting page */
-.schedule {
+/* Subscription */
+.subscription {
   background-color: var(--main-color);
   height: 100vh;
   font-size: 25px;
 }
 
-.schedule section {
+.subscription section {
   width: 70vw;
   display: block;
   margin: 0 auto;
   padding-top: 200px;
 }
 
-.schedule form input[type="text"],
-.schedule form input[type="email"] {
+.subscription form input[type="text"],
+.subscription form input[type="email"] {
   background-color: transparent;
   border: none;
   border-bottom: 2px solid var(--main-text-color);
@@ -446,7 +458,7 @@ nav {
   font-size: 25px;
 }
 
-.schedule form select {
+.subscription form select {
   background-color: transparent;
   color: var(--main-text-color);
   font-family: var(--font);
@@ -455,7 +467,7 @@ nav {
   border-bottom: 2px solid var(--main-text-color);
 }
 
-.schedule form input[type="submit"] {
+.subscription form input[type="submit"] {
   background-color: var(--main-text-color);
   border: none;
   width: 300px;
@@ -538,6 +550,12 @@ footer img {
     width: 34px;
     height: 6px;
     bottom: 11px;
+  }
+
+  .vision,
+  .team-content {
+    background-color: var(--main-color);
+    height: 100vh;
   }
 
   /* Footer medium*/
