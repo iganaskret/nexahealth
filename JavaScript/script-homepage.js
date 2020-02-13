@@ -23,13 +23,13 @@ function loaded() {
 }
 
 // Fetch SVG logo
-fetch("../Images/logo-final-1.svg")
-  .then(e => e.text())
-  .then(data => loadSVGlogo(data));
+// fetch("../Images/logo-final-1.svg")
+//   .then(e => e.text())
+//   .then(data => loadSVGlogo(data));
 
-function loadSVGlogo(data) {
-  document.querySelector(".logo").innerHTML = data;
-}
+// function loadSVGlogo(data) {
+//   document.querySelector(".logo").innerHTML = data;
+// }
 
 // Open / close burger menu
 burgerMenu.addEventListener("click", () => {
