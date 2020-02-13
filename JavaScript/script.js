@@ -1,7 +1,7 @@
 // Variables
 let root = document.documentElement;
 // const postLink = "https://nexahealth.dk/wp-json/wp/v2/posts?_embed";
-// const template = document.querySelector("template").content;
+// // const template = document.querySelector("template").content;
 // const body = document.querySelector("body");
 // const content = document.querySelector(".content");
 // const burgerMenu = document.querySelector(".burger-menu");

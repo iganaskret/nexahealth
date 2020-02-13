@@ -9,22 +9,44 @@
   </head>
   <body>
     <!-- Loader -->
-    <div class="wrapper"></div>
+    <!-- <div class="wrapper"></div> -->
     <!-- Navigation -->
     <nav>
       <div class="burger-menu">
         <div class="burger"></div>
       </div>
       <div>
-        <img class="logo" src="Images/logo-final-1.svg" alt="logo" />
+        <a href="" id="logo-link"
+          ><img class="logo" src="Images/logo-final-1.svg" alt="logo"
+        /></a>
       </div>
     </nav>
     <!-- Content of the homepage -->
     <div class="schedule-content">
       <!-- Main content  -->
-      <main>
+      <main class="schedule">
         <section>
-          <div class="schedule-form">Here goes the form</div>
+          <div class="schedule-form">
+            <form>
+              <label for="fname">My name is </label>
+              <input type="text" id="fname" name="fname" />
+              <label for="type">. I am </label>
+
+              <select id="type">
+                <option value="citizen" id="citizen">a citizen</option>
+                <option value="health professional" id="hp"
+                  >a health professional</option
+                >
+              </select>
+              <label for="email">
+                and I am interested in NEXA. I'd like to be updated on my e-mail
+                address
+              </label>
+              <input type="email" id="email" name="email" />
+              <span>.</span> <br />
+              <input type="submit" />
+            </form>
+          </div>
         </section>
       </main>
       <!-- Footer -->
@@ -41,13 +63,13 @@
       <!-- Menu -->
       <div class="menu hide">
         <ul class="subheader">
-          <li>HOMEPAGE</li>
-          <li>VISION</li>
-          <li>TEAM</li>
-          <li>SUBSCRIPTION</li>
+          <li><a href="" id="menu-link">HOMEPAGE</a></li>
+          <li><a href="" id="vision-link">VISION</a></li>
+          <li><a href="" id="team-link">TEAM</a></li>
+          <li><a href="" id="subscription-link">SUBSCRIPTION</a></li>
         </ul>
       </div>
     </div>
   </body>
-  <!-- <script src="JavaScript/script-citizen.js"></script> -->
+  <script src="JavaScript/script-schedule.js"></script>
 </html>

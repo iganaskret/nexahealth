@@ -144,6 +144,24 @@ nav {
   padding: 10px;
 }
 
+.user-type {
+  float: right;
+  padding: 20px;
+  transform: translateY(-80px);
+}
+
+.user-type span,
+.user-type a {
+  color: var(--main-text-color);
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.user-type span:first-of-type {
+  font-weight: 600;
+  font-size: 20px;
+}
+
 /* Burger menu */
 .burger-menu {
   position: absolute;
@@ -220,6 +238,17 @@ nav {
   z-index: 98;
   background-color: var(--main-text-color);
   color: var(--main-color);
+}
+
+.menu a {
+  color: var(--main-color);
+  text-decoration: none;
+}
+
+.menu .active {
+  opacity: 1;
+  transform: scale(1.3);
+  cursor: auto;
 }
 
 @keyframes fade {
@@ -383,9 +412,61 @@ nav {
   background-color: var(--main-text-color);
 }
 
+.subscription-grid a {
+  font-size: 20px;
+}
+
 .subscription-grid div:hover button {
   background-color: var(--main-color);
   color: var(--main-text-color);
+}
+
+/* Schedule a meeting page */
+.schedule {
+  background-color: var(--main-color);
+  height: 100vh;
+  font-size: 25px;
+}
+
+.schedule section {
+  width: 70vw;
+  display: block;
+  margin: 0 auto;
+  padding-top: 200px;
+}
+
+.schedule form input[type="text"],
+.schedule form input[type="email"] {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid var(--main-text-color);
+  width: 300px;
+  color: var(--main-text-color);
+  font-family: var(--font);
+  font-size: 25px;
+}
+
+.schedule form select {
+  background-color: transparent;
+  color: var(--main-text-color);
+  font-family: var(--font);
+  font-size: 25px;
+  border: none;
+  border-bottom: 2px solid var(--main-text-color);
+}
+
+.schedule form input[type="submit"] {
+  background-color: var(--main-text-color);
+  border: none;
+  width: 300px;
+  color: var(--main-color);
+  font-family: var(--font);
+  font-size: 25px;
+  padding: 10px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  margin-top: 50px;
 }
 
 /* Footer */
