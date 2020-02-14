@@ -85,7 +85,7 @@
   </head>
   <body>
     <!-- Loader -->
-    <!-- <div class="wrapper"></div> -->
+    <div class="wrapper-subpage"></div>
     <!-- Navigation -->
     <nav>
       <div class="burger-menu">
@@ -97,9 +97,9 @@
         /></a>
       </div>
       <div class="user-type">
-        <a href="subscription.html?citizen" id="citizen-link">Citizen</a>
+        <a href="subscription.html?citizen" class="citizen-link">Citizen</a>
         <span> / </span>
-        <a href="subscription.html?health-professional" id="hp-link"
+        <a href="subscription.html?health-professional" class="hp-link"
           >Health professional</a
         >
       </div>
@@ -111,22 +111,25 @@
         <section>
           <div class="subscription-form">
             <form>
-              <label for="fname">My name is </label>
-              <input type="text" id="fname" name="fname" />
-              <label for="type">. I am </label>
+              <label for="fname" style="white-space:nowrap"
+                >My name is <input type="text" id="fname" name="fname" />
+              </label>
+              <label for="type" style="white-space:nowrap">
+                I am
 
-              <select id="type">
-                <option value="citizen" id="citizen">a citizen</option>
-                <option value="health professional" id="hp"
-                  >a health professional</option
-                >
-              </select>
+                <select id="type">
+                  <option value="citizen" id="citizen">a citizen</option>
+                  <option value="health professional" id="hp"
+                    >a health professional</option
+                  >
+                </select>
+              </label>
               <label for="email">
                 and I am interested in NEXA. I'd like to be updated on my e-mail
                 address
               </label>
               <input type="email" id="email" name="email" />
-              <span>.</span> <br />
+              <br />
               <input type="submit" />
             </form>
           </div>
@@ -151,6 +154,13 @@
           <li><a href="" class="menu-link-subpage">TEAM</a></li>
           <li class="active">SUBSCRIPTION</li>
         </ul>
+        <div class="user-type-menu">
+          <a href="subscription.html?citizen" class="citizen-link">Citizen</a>
+          <span> / </span>
+          <a href="subscription.html?health-professional" class="hp-link"
+            >Health professional</a
+          >
+        </div>
       </div>
     </div>
   </body>

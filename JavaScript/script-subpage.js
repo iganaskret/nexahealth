@@ -7,20 +7,20 @@ const burgerMenu = document.querySelector(".burger-menu");
 const url = window.location.href;
 typeOfUser(url);
 
-// const loaderWrapper = document.querySelector(".wrapper");
-// loaded();
+const loaderWrapper = document.querySelector(".wrapper-subpage");
+loaded();
 
-// function loaded() {
-//   loaderWrapper.classList.add("fade-out-menu");
-//   setTimeout(() => {
-//     loaderWrapper.classList.add("hide");
-//     loaderWrapper.classList.remove("fade-out-menu");
-//   }, 500);
-//   setTimeout(() => {
-//     body.classList.add("body-loaded");
-//   }, 700);
-//   content.classList.remove("hide");
-// }
+function loaded() {
+  loaderWrapper.classList.add("fade-out-menu");
+  setTimeout(() => {
+    loaderWrapper.classList.add("hide");
+    loaderWrapper.classList.remove("fade-out-menu");
+  }, 500);
+  setTimeout(() => {
+    body.classList.add("body-loaded");
+  }, 700);
+  //   content.classList.remove("hide");
+}
 
 // Fetch SVG logo
 // fetch("../Images/logo-final-1.svg")
@@ -100,7 +100,9 @@ function typeOfUser(url) {
     if (url.includes("subscription")) {
       document.querySelector("#hp").setAttribute("selected", true);
     }
-    document.querySelector("#hp-link").classList.add("disabled");
+    document.querySelectorAll(".hp-link").forEach(link => {
+      link.classList.add("disabled");
+    });
     document.querySelectorAll(".menu-link-subpage").forEach(link => {
       page = link.textContent.toLowerCase();
       link.setAttribute("href", page + ".html?health-professional");
@@ -115,6 +117,8 @@ function typeOfUser(url) {
     }
     document.querySelector("#logo-link").setAttribute("href", "citizen.html");
     document.querySelector("#menu-link").setAttribute("href", "citizen.html");
-    document.querySelector("#citizen-link").classList.add("disabled");
+    document.querySelectorAll(".citizen-link").forEach(link => {
+      link.classList.add("disabled");
+    });
   }
 }

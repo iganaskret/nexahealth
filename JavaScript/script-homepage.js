@@ -57,7 +57,6 @@ burgerMenu.addEventListener("click", () => {
 });
 
 // Fetch and display from Wordpress
-
 function loadData() {
   fetch(postLink)
     .then(e => e.json())
@@ -82,6 +81,17 @@ function showData(data) {
         document.querySelector(".post-container").appendChild(clone);
       }
     }
+  });
+  showPrototype();
+}
+
+function showPrototype() {
+  //show prototype on small screens
+  document.querySelector(".video-btn").addEventListener("click", () => {
+    document.querySelector(".video-modal").classList.remove("hide");
+  });
+  document.querySelector(".close-burger").addEventListener("click", () => {
+    document.querySelector(".video-modal").classList.add("hide");
   });
 }
 
