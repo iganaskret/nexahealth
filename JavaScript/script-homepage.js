@@ -95,25 +95,25 @@ function showPrototype() {
   });
 }
 
-function videoControl() {
-  const video = document.querySelector(".video");
-  const config = {
-    root: null, //document.querySelector('#some-element')
-    rootMargin: "0px",
-    threshold: [0, 0.5, 0.75, 1]
-  };
-  let observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.intersectionRatio > 0.35) {
-        document.querySelector("#chatbox-video").play();
-      } else {
-        document.querySelector("#chatbox-video").pause();
-      }
-      // console.log(entry.intersectionRatio);
-    });
-  }, config);
-  observer.observe(video);
-}
+// function videoControl() {
+//   const video = document.querySelector(".video");
+//   const config = {
+//     root: null, //document.querySelector('#some-element')
+//     rootMargin: "0px",
+//     threshold: [0, 0.5, 0.75, 1]
+//   };
+//   let observer = new IntersectionObserver(entries => {
+//     entries.forEach(entry => {
+//       if (entry.intersectionRatio > 0.35) {
+//         document.querySelector("#chatbox-video").play();
+//       } else {
+//         document.querySelector("#chatbox-video").pause();
+//       }
+//       // console.log(entry.intersectionRatio);
+//     });
+//   }, config);
+//   observer.observe(video);
+// }
 
 loadData(postLink);
-videoControl();
+// videoControl();

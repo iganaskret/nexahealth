@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,700&display=swap");
 
+/* @font-face {
+  font-family: Poppins;
+  src: url(../Poppins/Poppins-Medium.ttf);
+} */
+
 :root {
   --main-color: #00275a;
   --main-text-color: #fff;
@@ -377,7 +382,7 @@ nav {
   height: 100vh;
   color: var(--secondary-color);
   display: grid;
-  grid-template-columns: 1fr 80px 1fr;
+  grid-template-columns: 1fr;
   text-align: center;
 }
 
@@ -391,7 +396,7 @@ nav {
 }
 
 #homepage-content .post-container {
-  margin: 8vh 7vh;
+  margin: 15vh 10vw;
 }
 
 .post-chunk {
@@ -468,6 +473,7 @@ nav {
   background-color: var(--main-color);
   height: 100vh;
   font-size: 25px;
+  line-height: 50px;
 }
 
 .subscription section {
@@ -486,6 +492,8 @@ nav {
   color: var(--main-text-color);
   font-family: var(--font);
   font-size: 25px;
+  text-align: center;
+  padding: 0;
 }
 
 .subscription form select {
@@ -495,6 +503,7 @@ nav {
   font-size: 25px;
   border: none;
   border-bottom: 2px solid var(--main-text-color);
+  padding: 0;
 }
 
 .subscription form input[type="submit"] {
