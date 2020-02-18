@@ -128,8 +128,8 @@
             </video>
           </div> -->
         </section>
-        <section id="subscription">
-          <div class="subscription-grid">
+        <section id="subscription" class="subscription">
+          <!-- <div class="subscription-grid">
             <div class="subscribe">
               <a href="subscription.html?citizen"><button>Subscribe</button></a>
             </div>
@@ -138,6 +138,30 @@
                 ><button>Schedule a meeting</button></a
               >
             </div>
+          </div> -->
+          <div class="subscription-form" id="subscription-main">
+            <form>
+              <label for="fname" style="white-space:nowrap"
+                >My name is <input type="text" id="fname" name="fname" />
+              </label>
+              <label for="type" style="white-space:nowrap">
+                I am
+
+                <select id="type">
+                  <option value="citizen" id="citizen">a citizen</option>
+                  <option value="health professional" id="hp"
+                    >a health professional</option
+                  >
+                </select>
+              </label>
+              <label for="email">
+                and I am interested in NEXA. I'd like to be updated on my e-mail
+                address
+              </label>
+              <input type="email" id="email" name="email" />
+              <br />
+              <input type="submit" />
+            </form>
           </div>
         </section>
       </main>

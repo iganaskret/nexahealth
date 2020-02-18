@@ -74,10 +74,15 @@ footer {
 
 /* Loader */
 .wrapper {
-  position: relative;
+  /* position: relative;
   top: 40vh;
   left: 40vw;
-  height: 200px;
+  height: 200px; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
 }
 
 .wrapper-index {
@@ -200,16 +205,11 @@ nav {
   font-weight: 600;
 }
 
-/* .user-type a {
-  font-weight: 600;
-  font-size: 20px;
-} */
-
 /* Burger menu */
 .burger-menu {
   position: absolute;
   display: inline-block;
-  top: 35px;
+  top: 15px;
   left: 30px;
   padding: 40px;
   z-index: 110;
@@ -476,7 +476,8 @@ nav {
   line-height: 50px;
 }
 
-.subscription section {
+.subscription section,
+#subscription-main {
   width: 70vw;
   display: block;
   margin: 0 auto;
