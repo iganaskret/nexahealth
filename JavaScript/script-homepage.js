@@ -1,7 +1,8 @@
 // Variables
 let root = document.documentElement;
 const postLink = "https://nexahealth.dk/wp-json/wp/v2/posts?_embed";
-const template = document.querySelector("template").content;
+const templateStory = document.querySelector(".story").content;
+const templateChatbox = document.querySelector(".chatbox").content;
 const body = document.querySelector("body");
 const content = document.querySelector(".content");
 const burgerMenu = document.querySelector(".burger-menu");
@@ -66,34 +67,65 @@ function loadData() {
 function showData(data) {
   data.forEach(post => {
     //clone
-    const clone = template.cloneNode(true);
+    const cloneStory = templateStory.cloneNode(true);
+    const cloneChatbox = templateChatbox.cloneNode(true);
     //populate
     if (
       document
         .querySelector(".post-container")
         .classList.contains("fade-in-posts")
     ) {
-      const postContent = clone.querySelector(".post-content");
+      const postContent = cloneStory.querySelector(".post-content");
       if (post.title.rendered == user) {
         postContent.innerHTML = post.content.rendered;
-
         //append
-        document.querySelector(".post-container").appendChild(clone);
+        document.querySelector(".post-container").appendChild(cloneStory);
       }
     }
+    if (post.title.rendered == "Chatbox") {
+      cloneChatbox.querySelector(".messages").innerHTML = post.content.rendered;
+      //append
+      document.querySelector(".animation").appendChild(cloneChatbox);
+    }
   });
-  showPrototype();
+  animateChat();
 }
 
-function showPrototype() {
-  //show prototype on small screens
-  document.querySelector(".video-btn").addEventListener("click", () => {
-    document.querySelector(".video-modal").classList.remove("hide");
+function animateChat() {
+  document.querySelectorAll(".messages .msg").forEach(msg => {
+    let span = document.createElement("span");
+    var dots = document.createTextNode("...");
+    span.appendChild(dots);
+    msg.appendChild(span);
   });
-  document.querySelector(".close-burger").addEventListener("click", () => {
-    document.querySelector(".video-modal").classList.add("hide");
-  });
+  for (let i = 0; i < 16; i++) {
+    setTimeout(function() {
+      let marginValue = 100 - i * 6;
+      document.querySelectorAll(".msg")[i].style.display = "block";
+      document.querySelectorAll(".msg")[0].style.marginTop = marginValue + "%";
+      setTimeout(function() {
+        document.querySelectorAll(".msg p")[i].style.display = "block";
+        document.querySelectorAll(".msg span")[i].style.display = "none";
+      }, 2000);
+    }, 1000 * i);
+  }
+  // for (i = 0; i < 16; i++) {
+  //   let j = i + 1;
+  //   document.querySelectorAll(".animation .messages p")[
+  //     i
+  //   ].style.animationDelay = j + "s";
+  // }
 }
+
+// function showPrototype() {
+//   //show prototype on small screens
+//   document.querySelector(".video-btn").addEventListener("click", () => {
+//     document.querySelector(".video-modal").classList.remove("hide");
+//   });
+//   document.querySelector(".close-burger").addEventListener("click", () => {
+//     document.querySelector(".video-modal").classList.add("hide");
+//   });
+// }
 
 // function videoControl() {
 //   const video = document.querySelector(".video");

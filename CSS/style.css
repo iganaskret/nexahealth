@@ -338,6 +338,7 @@ nav {
   opacity: 0.5;
   transition: all 0.4s ease-in-out;
   animation: pulse 1.5s infinite ease-in-out;
+  padding-top: 20%;
 }
 
 @keyframes pulse {
@@ -366,10 +367,69 @@ nav {
 }
 
 /* Animation */
+#landing {
+  overflow: hidden;
+}
+
 .animation {
-  height: 45vh;
-  text-align: center;
-  padding-top: 20%;
+  height: 100vh;
+  margin: 2vh 10vw;
+  /* text-align: center; */
+  /* padding-top: 20%; */
+}
+
+.messages {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* grid-template-rows: repeat(16, 1fr); */
+}
+
+.animation .msg {
+  /* border: 2px solid white; */
+  color: var(--main-color);
+  background-color: var(--main-text-color);
+  border-radius: 500px;
+  margin: 12px 0;
+  /* float: left; */
+  padding: 0 20px;
+  /* text-align: center; */
+  /* max-width: 350px; */
+  justify-self: start;
+  display: none; /* transition: opacity 0.5s var(--delay) ease-in-out; */
+  /* animation: show-message 7s ease-in-out forwards; */
+}
+
+.animation .msg p {
+  display: none;
+}
+
+.animation .msg:nth-of-type(odd) {
+  border: 2px solid var(--main-text-color);
+  background-color: transparent;
+  color: var(--main-text-color);
+  grid-column: 2;
+  text-align: right;
+  justify-self: end;
+}
+
+.animation .msg:nth-of-type(1) {
+  /* opacity: 1; */
+  /* animation: move-up 16s forwards linear; */
+}
+
+@keyframes show-message {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes move-up {
+  from {
+    margin-top: 100%;
+  }
+  to {
+    margin-top: 12px;
+  }
 }
 
 /* Homepage content */
@@ -393,6 +453,7 @@ nav {
 .blue {
   align-self: end;
   margin-bottom: 18vh;
+  padding-top: 0;
 }
 
 #homepage-content .post-container {
