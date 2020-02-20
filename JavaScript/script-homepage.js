@@ -93,23 +93,35 @@ function showData(data) {
 
 function animateChat() {
   document.querySelectorAll(".messages .msg").forEach(msg => {
-    let span = document.createElement("span");
-    var dots = document.createTextNode("...");
-    span.appendChild(dots);
-    msg.appendChild(span);
+    let spanDiv = document.createElement("div");
+    spanDiv.classList.add("span-div");
+    for (let i = 0; i < 3; i++) {
+      let span = document.createElement("span");
+      // var dots = document.createTextNode(".");
+      // span.appendChild(dots);
+      spanDiv.appendChild(span);
+    }
+    msg.appendChild(spanDiv);
   });
-  for (let i = 0; i < 16; i++) {
-    setTimeout(function() {
-      let marginValue = 100 - i * 6.5;
-      console.log(marginValue);
-      document.querySelectorAll(".msg")[i].style.display = "block";
-      document.querySelectorAll(".msg")[0].style.marginTop = marginValue + "%";
+  setTimeout(function() {
+    for (let i = 0; i < 16; i++) {
       setTimeout(function() {
-        document.querySelectorAll(".msg p")[i].style.display = "block";
-        document.querySelectorAll(".msg span")[i].style.display = "none";
-      }, 2000);
-    }, 3000 * i);
-  }
+        let marginValue = 100 - i * 6.5;
+        console.log(marginValue);
+        document.querySelectorAll(".msg")[i].style.display = "block";
+        document.querySelectorAll(".span-div span").forEach(span => {
+          span.classList.add("animation-dot");
+        });
+        document.querySelectorAll(".msg")[0].style.marginTop =
+          marginValue + "%";
+        setTimeout(function() {
+          document.querySelectorAll(".msg p")[i].style.display = "block";
+          document.querySelectorAll(".msg .span-div")[i].style.display = "none";
+        }, 2000);
+      }, 3000 * i);
+    }
+  }, 2000);
+
   // for (i = 0; i < 16; i++) {
   //   let j = i + 1;
   //   document.querySelectorAll(".animation .messages p")[
