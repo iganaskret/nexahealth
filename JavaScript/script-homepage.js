@@ -100,14 +100,15 @@ function animateChat() {
   });
   for (let i = 0; i < 16; i++) {
     setTimeout(function() {
-      let marginValue = 100 - i * 6;
+      let marginValue = 100 - i * 6.5;
+      console.log(marginValue);
       document.querySelectorAll(".msg")[i].style.display = "block";
       document.querySelectorAll(".msg")[0].style.marginTop = marginValue + "%";
       setTimeout(function() {
         document.querySelectorAll(".msg p")[i].style.display = "block";
         document.querySelectorAll(".msg span")[i].style.display = "none";
       }, 2000);
-    }, 1000 * i);
+    }, 3000 * i);
   }
   // for (i = 0; i < 16; i++) {
   //   let j = i + 1;

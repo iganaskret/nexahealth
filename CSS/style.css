@@ -391,7 +391,7 @@ nav {
   border-radius: 500px;
   margin: 12px 0;
   /* float: left; */
-  padding: 0 20px;
+  padding: 10px 20px;
   /* text-align: center; */
   /* max-width: 350px; */
   justify-self: start;
@@ -400,6 +400,8 @@ nav {
 }
 
 .animation .msg p {
+  padding: 0;
+  margin: 0;
   display: none;
 }
 
