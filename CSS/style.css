@@ -368,14 +368,16 @@ nav {
 
 /* Animation */
 #landing {
-  overflow: hidden;
 }
 
 .animation {
-  height: 100vh;
+  overflow: scroll;
+
+  height: 80%;
+  border: 1px solid red;
   margin: 2vh 10vw;
   /* text-align: center; */
-  /* padding-top: 20%; */
+  padding-top: 20px;
 }
 
 .messages {
@@ -389,15 +391,28 @@ nav {
   color: var(--main-color);
   background-color: var(--main-text-color);
   border-radius: 25px;
-  margin: 12px 0;
+  margin: 30px 0;
   /* float: left; */
   padding: 10px 20px;
   /* text-align: center; */
   /* max-width: 350px; */
   justify-self: start;
   position: relative;
-  display: none; /* transition: opacity 0.5s var(--delay) ease-in-out; */
+  bottom: 0;
+  opacity: 0;
+  /* display: none; */
+  display: block;
+  /* transition: all 2s ease-in-out; */
+
   /* animation: show-message 7s ease-in-out forwards; */
+}
+
+.just-opacity {
+  transition: opacity 2s ease-in-out;
+}
+
+.opacity-margin {
+  transition: all 2s ease-in-out;
 }
 
 .animation .msg:before,
@@ -520,7 +535,7 @@ nav {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  height: 90vh;
   color: var(--secondary-color);
   display: grid;
   grid-template-columns: 1fr;

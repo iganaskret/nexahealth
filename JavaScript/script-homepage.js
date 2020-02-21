@@ -92,6 +92,8 @@ function showData(data) {
 }
 
 function animateChat() {
+  body.classList.add("scroll-stop");
+
   document.querySelectorAll(".messages .msg").forEach(msg => {
     let spanDiv = document.createElement("div");
     spanDiv.classList.add("span-div");
@@ -108,7 +110,18 @@ function animateChat() {
       setTimeout(function() {
         let marginValue = 100 - i * 6.5;
         console.log(marginValue);
-        document.querySelectorAll(".msg")[i].style.display = "block";
+        document.querySelectorAll(".msg")[i].style.opacity = 1;
+        if (i == 0) {
+          document.querySelectorAll(".msg")[i].classList.add("just-opacity");
+        } else if (i == 1) {
+          document
+            .querySelectorAll(".msg")
+            [i - 1].classList.add("opacity-margin");
+          document.querySelectorAll(".msg")[i].classList.add("opacity-margin");
+        } else {
+          document.querySelectorAll(".msg")[i].classList.add("opacity-margin");
+          document.querySelectorAll(".msg")[0].classList.remove("just-opacity");
+        }
         document.querySelectorAll(".span-div span").forEach(span => {
           span.classList.add("animation-dot");
         });
@@ -121,6 +134,14 @@ function animateChat() {
       }, 3000 * i);
     }
   }, 2000);
+  let obj = document.querySelector(".animation");
+
+  obj.addEventListener("scroll", () => {
+    if (obj.offsetHeight + obj.scrollTop == obj.scrollHeight) {
+      // body.classList.remove("scroll-stop");
+      alert("joggg");
+    }
+  });
 
   // for (i = 0; i < 16; i++) {
   //   let j = i + 1;

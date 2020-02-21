@@ -211,6 +211,12 @@
 // useSlider(x);
 // x.addListener(useSlider);
 
+// obj.addEventListener("scroll", () => {
+//   if (obj.offsetHeight + obj.scrollTop == obj.scrollHeight) {
+//     alert("End");
+//   }
+// });
+
 var slider = function(sliderElement) {
   var pages = [];
   var currentSlide = 1;
@@ -227,12 +233,17 @@ var slider = function(sliderElement) {
         : document.onmousewheel !== undefined
         ? "mousewheel"
         : "DOMMouseScroll";
+
     window.addEventListener(whatWheel, function(e) {
-      var direction = e.wheelDelta || e.deltaY;
-      if (direction > 0) {
-        changeSlide(-1);
-      } else {
-        changeSlide(1);
+      // jezeli jakis element ma jakas klase to wtedy (nie) skrolluj
+      if (!document.querySelector("body").classList.contains("scroll-stop")) {
+        var direction = e.wheelDelta || e.deltaY;
+        // if (obj.scrollHeight - obj.scrollTop - obj.clientHeight < 1)
+        if (direction > 0) {
+          changeSlide(-1);
+        } else {
+          changeSlide(1);
+        }
       }
     });
 
@@ -366,6 +377,8 @@ var slider = function(sliderElement) {
       isChanging ||
       (direction == 1 && currentSlide == pages.length) ||
       (direction == -1 && currentSlide == 1)
+      // ||
+      // document.querySelectorAll(".msg")[0].classList.contains("just-opacity")
     ) {
       return;
     }
@@ -408,3 +421,6 @@ var slider = function(sliderElement) {
     gotoSlide: gotoSlide
   };
 };
+
+// let obj = document.querySelector(".animation");
+// console.log(obj.offsetHeight);
