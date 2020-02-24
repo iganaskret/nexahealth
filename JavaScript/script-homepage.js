@@ -8,6 +8,7 @@ const content = document.querySelector(".content");
 const burgerMenu = document.querySelector(".burger-menu");
 const loaderWrapper = document.querySelector(".wrapper");
 let user = document.querySelector(".user-type .disabled").textContent;
+let counter = 1;
 console.log(user);
 loaded();
 
@@ -91,10 +92,23 @@ function showData(data) {
   animateChat();
 }
 
+var isInViewport = function(elem) {
+  var bounding = elem.getBoundingClientRect();
+  return (
+    bounding.top >= 0 &&
+    bounding.left >= 0 &&
+    bounding.bottom <=
+      (window.innerHeight || document.documentElement.clientHeight) &&
+    bounding.right <=
+      (window.innerWidth || document.documentElement.clientWidth)
+  );
+};
+
 function animateChat() {
   body.classList.add("scroll-stop");
 
   document.querySelectorAll(".messages .msg").forEach(msg => {
+    msg.style.gridRow = counter;
     let spanDiv = document.createElement("div");
     spanDiv.classList.add("span-div");
     for (let i = 0; i < 3; i++) {
@@ -104,29 +118,45 @@ function animateChat() {
       spanDiv.appendChild(span);
     }
     msg.appendChild(spanDiv);
+    counter++;
   });
+  document.querySelectorAll(".msg")[15].classList.add("last-msg");
   setTimeout(function() {
+    let j, position;
     for (let i = 0; i < 16; i++) {
       setTimeout(function() {
-        let marginValue = 100 - i * 6.5;
-        console.log(marginValue);
+        // let marginValue = 100 - i * 6.5;
         document.querySelectorAll(".msg")[i].style.opacity = 1;
-        if (i == 0) {
-          document.querySelectorAll(".msg")[i].classList.add("just-opacity");
-        } else if (i == 1) {
-          document
-            .querySelectorAll(".msg")
-            [i - 1].classList.add("opacity-margin");
-          document.querySelectorAll(".msg")[i].classList.add("opacity-margin");
-        } else {
-          document.querySelectorAll(".msg")[i].classList.add("opacity-margin");
-          document.querySelectorAll(".msg")[0].classList.remove("just-opacity");
+        console.log();
+        // if (i == 0) {
+        //   document.querySelectorAll(".msg")[i].classList.add("just-opacity");
+
+        // } else if (i == 1) {
+        //   document
+        //     .querySelectorAll(".msg")
+        //     [i - 1].classList.add("opacity-margin");
+        //   document.querySelectorAll(".msg")[i].classList.add("opacity-margin");
+        // } else {
+        //   document.querySelectorAll(".msg")[i].classList.add("opacity-margin");
+        //   document.querySelectorAll(".msg")[0].classList.remove("just-opacity");
+        // }
+
+        position = 16;
+        document.querySelectorAll(".msg")[i].classList.add("move-up");
+        document.querySelectorAll(".msg")[i].style.gridRow = position;
+        j = i;
+        while (j > 0) {
+          position--;
+          j--;
+          // document.querySelectorAll(".msg")[j].classList.add("move-up-j");
+          // root.style.setProperty("--row", position);
+          document.querySelectorAll(".msg")[j].style.gridRow = position;
         }
+
         document.querySelectorAll(".span-div span").forEach(span => {
           span.classList.add("animation-dot");
         });
-        document.querySelectorAll(".msg")[0].style.marginTop =
-          marginValue + "%";
+        // document.querySelectorAll(".msg")[0].style.marginTop = marginValue + "%";
         setTimeout(function() {
           document.querySelectorAll(".msg p")[i].style.display = "block";
           document.querySelectorAll(".msg .span-div")[i].style.display = "none";
@@ -136,10 +166,17 @@ function animateChat() {
   }, 2000);
   let obj = document.querySelector(".animation");
 
+  let lastMsg = document.querySelector(".last-msg");
+
   obj.addEventListener("scroll", () => {
-    if (obj.offsetHeight + obj.scrollTop == obj.scrollHeight) {
-      // body.classList.remove("scroll-stop");
-      alert("joggg");
+    if (isInViewport(lastMsg)) {
+      setTimeout(function() {
+        body.classList.remove("scroll-stop");
+      }, 3000);
+
+      // alert("jes");
+    } else {
+      body.classList.add("scroll-stop");
     }
   });
 

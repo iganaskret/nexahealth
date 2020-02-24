@@ -17,6 +17,7 @@
   --typewriter-width: 0;
   --typewriter-height: 59px;
   --v-width: 0;
+  --row: 16;
 }
 
 /* html {
@@ -372,7 +373,8 @@ nav {
 
 .animation {
   overflow: scroll;
-
+  display: flex;
+  flex-direction: column-reverse;
   height: 80%;
   border: 1px solid red;
   margin: 2vh 10vw;
@@ -384,6 +386,7 @@ nav {
   display: grid;
   grid-template-columns: 1fr 1fr;
   /* grid-template-rows: repeat(16, 1fr); */
+  transition: all 2s ease-in-out;
 }
 
 .animation .msg {
@@ -391,7 +394,7 @@ nav {
   color: var(--main-color);
   background-color: var(--main-text-color);
   border-radius: 25px;
-  margin: 30px 0;
+  margin: 10px 0;
   /* float: left; */
   padding: 10px 20px;
   /* text-align: center; */
@@ -402,17 +405,35 @@ nav {
   opacity: 0;
   /* display: none; */
   display: block;
-  /* transition: all 2s ease-in-out; */
+  transition: all 2s ease-in-out;
 
   /* animation: show-message 7s ease-in-out forwards; */
 }
 
-.just-opacity {
+/* .animation .msg:nth-of-type(1) {
+  margin-top: -20px;
+} */
+
+/* .just-opacity {
   transition: opacity 2s ease-in-out;
 }
 
 .opacity-margin {
   transition: all 2s ease-in-out;
+} */
+
+.move-up {
+  transform: translateY(-20px);
+}
+
+.move-up-j {
+  animation: move-rows 1s forwards ease;
+}
+
+@keyframes move-rows {
+  to {
+    grid-row: var(--row);
+  }
 }
 
 .animation .msg:before,
@@ -477,6 +498,12 @@ nav {
   grid-column: 2;
   text-align: right;
   justify-self: end;
+  /* grid-row: 3; */
+}
+
+.animation .msg.last-msg {
+  /* color: green;
+  background-color: red; */
 }
 
 .animation .span-div span {
