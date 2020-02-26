@@ -73,18 +73,36 @@ if (url.includes("team") || url.includes("vision")) {
         (post.title.rendered == "Team" && url.includes("team")) ||
         (post.title.rendered == "Vision" && url.includes("vision"))
       ) {
-        console.log("team or vision");
         //clone
         const clone = template.cloneNode(true);
         //populate
-        const postContent = clone.querySelector(".post-content");
+        const postContent = clone.querySelector(".post");
         postContent.innerHTML = post.content.rendered;
         //append
         document.querySelector(".post-container").appendChild(clone);
       }
     });
+    displayData();
   }
   loadData();
+}
+
+function displayData() {
+  document.querySelectorAll(".post-container .post div").forEach(div => {
+    if (
+      div.querySelector("h2").textContent == "Vision" ||
+      div.querySelector("h2").textContent == "Mission"
+    ) {
+      let icon = document.createElement("img");
+      icon.setAttribute("alt", div.querySelector("h2").textContent + " icon");
+      icon.classList.add("icon-vission");
+      icon.setAttribute(
+        "src",
+        "../Images/" + div.querySelector("h2").textContent + ".png"
+      );
+      div.insertBefore(icon, div.querySelector("h2"));
+    }
+  });
 }
 
 function typeOfUser(url) {

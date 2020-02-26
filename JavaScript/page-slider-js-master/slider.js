@@ -290,10 +290,30 @@ var slider = function(sliderElement) {
                     }, 1000 * i);
                   }
                 }
+                mobileSlides();
               }
             }, 800);
           }
         });
+
+    let counterSlide = 0;
+
+    // slides for mobile
+    function mobileSlides() {
+      if (
+        getComputedStyle(document.querySelectorAll(".post-chunk")[3], null)
+          .display == "none" &&
+        counterSlide == 0
+      ) {
+        counterSlide++;
+        let newSlide = document.querySelector(".post-container2");
+        newSlide.classList.remove("hide");
+        let newSlideContent = document.querySelectorAll(".post-chunk")[3];
+        let newSlideContent1 = document.querySelectorAll(".post-chunk")[4];
+        newSlide.appendChild(newSlideContent);
+        newSlide.appendChild(newSlideContent1);
+      }
+    }
 
     // set up page
     document.querySelector(sliderElement).classList.add("slider__container");

@@ -1,10 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,700&display=swap");
 
-/* @font-face {
-  font-family: Poppins;
-  src: url(../Poppins/Poppins-Medium.ttf);
-} */
-
 :root {
   --main-color: #00275a;
   --main-text-color: #fff;
@@ -17,13 +12,8 @@
   --typewriter-width: 0;
   --typewriter-height: 59px;
   --v-width: 0;
-  --row: 16;
+  --up: -10px;
 }
-
-/* html {
-  scroll-snap-type: y mandatory;
-  scroll-snap-stop: always;
-} */
 
 body {
   font-family: var(--font);
@@ -35,11 +25,6 @@ body {
   box-sizing: border-box;
   overflow: hidden;
 }
-
-/* main section,
-footer {
-  scroll-snap-align: start;
-} */
 
 .body-loaded {
   background-color: var(--main-color);
@@ -88,9 +73,9 @@ footer {
 
 .wrapper-index {
   position: relative;
-  top: 40vh;
-  left: 40vw;
-  height: 200px;
+  display: flex;
+  justify-content: center;
+  margin-top: 40vh;
 }
 
 .wrapper-subpage {
@@ -135,8 +120,9 @@ footer {
 
 .buttons {
   position: relative;
-  top: 35vh;
-  left: 29vw;
+  display: flex;
+  justify-content: center;
+  margin-top: 15vh;
 }
 
 .buttons button {
@@ -423,17 +409,8 @@ nav {
 } */
 
 .move-up {
-  transform: translateY(-20px);
-}
-
-.move-up-j {
-  animation: move-rows 1s forwards ease;
-}
-
-@keyframes move-rows {
-  to {
-    grid-row: var(--row);
-  }
+  transform: translateY(var(--up));
+  /* animation: move-up 1s forwards ease; */
 }
 
 .animation .msg:before,
@@ -705,6 +682,52 @@ nav {
   margin-top: 50px;
 }
 
+/* Vision */
+.vision .post-container .post div {
+  display: block;
+}
+
+.vision .post-container,
+.team .post-container {
+  display: inline-block;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.vision .post-container h2,
+.team .post-container h2 {
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+.vision .post {
+  display: grid;
+  grid-gap: 100px;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+}
+
+.vision .post .icon-vission {
+  width: 150px;
+}
+
+/* Team */
+.team .post-container {
+  padding: 0 50px;
+  transform: translateY(-50px);
+}
+
+.team .post {
+  text-align: center;
+}
+
+.team .team-members {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: justify;
+  grid-gap: 50px;
+}
+
 /* Footer */
 footer {
   position: absolute;
@@ -735,18 +758,6 @@ footer img {
 
 /* Medium big screen */
 @media all and (max-width: 1024px) {
-  /* Index page medium big*/
-  .wrapper-index {
-    position: relative;
-    top: 40vh;
-    left: 55vw;
-    height: 200px;
-  }
-
-  .buttons {
-    left: 40vw;
-  }
-
   /* User type medium big*/
   .user-type {
     display: none;
@@ -761,17 +772,14 @@ footer img {
   /* Homepage content medium big*/
   #homepage-content h2,
   #homepage-content h4,
-  #homepage-content p {
+  #homepage-content p,
+  #homepage-content2 p,
+  #homepage-content2 h2 {
     font-size: 15px;
   }
 
   .blue {
     margin-bottom: 15vh;
-  }
-
-  #homepage-content .post-container {
-    /* margin: 12vh 7vh; */
-    margin: 20px;
   }
 
   /* Subscription medium big */
@@ -800,16 +808,9 @@ footer img {
 
 /* Medium screen */
 @media all and (max-width: 765px) {
-  /* Typewriter medium */
-  .wrapper-index {
-    left: 30vw;
-  }
-
   /* Buttons medium */
   .buttons {
-    position: relative;
-    top: 35vh;
-    left: 30vw;
+    flex-wrap: wrap;
   }
 
   .buttons button {
@@ -865,18 +866,14 @@ footer img {
     height: 100vh;
   }
 
-  /* Arrow down medium*/
-  .arrow-down {
-    display: none;
-  }
-
   /* Homepage content medium*/
   #homepage-content {
     grid-template-columns: 1fr;
   }
 
-  #homepage-content .post-container {
-    margin: 3vh 7vh;
+  #homepage-content .post-container,
+  #homepage-content2 .post-container2 {
+    margin: 10% 7vh 8%;
   }
 
   .video-btn {
@@ -989,18 +986,6 @@ footer img {
 
 /* Small screen */
 @media all and (max-width: 420px) {
-  /* Typewriter small */
-  .wrapper-index {
-    left: 10vw;
-  }
-
-  /* Buttons small */
-  .buttons {
-    position: relative;
-    top: 35vh;
-    left: 10vw;
-  }
-
   /* Burger menu small */
   .burger-menu {
     top: 15px;
@@ -1026,6 +1011,34 @@ footer img {
     width: 20px;
     height: 4px;
     bottom: 7px;
+  }
+
+  /* Homepage content small */
+  #homepage-content .post-content :nth-child(4),
+  #homepage-content .post-content :nth-child(5),
+  #homepage-content .post-content :nth-child(6) {
+    display: none;
+  }
+
+  #homepage-content2 {
+    background-image: url("../Images/background2.png");
+    background-color: var(--main-text-color);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* height: 100vh; */
+    color: var(--secondary-color);
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  #homepage-content2 .post-container2 {
+    margin: 30% 7vh 8%;
+  }
+
+  #homepage-content2 .post-container2 h2 {
+    padding-top: 20px;
   }
 
   /* Subscription small */

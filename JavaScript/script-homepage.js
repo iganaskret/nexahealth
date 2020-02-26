@@ -148,8 +148,7 @@ function animateChat() {
         while (j > 0) {
           position--;
           j--;
-          // document.querySelectorAll(".msg")[j].classList.add("move-up-j");
-          // root.style.setProperty("--row", position);
+
           document.querySelectorAll(".msg")[j].style.gridRow = position;
         }
 
