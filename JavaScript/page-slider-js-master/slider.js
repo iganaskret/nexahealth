@@ -333,58 +333,66 @@ var slider = function(sliderElement) {
     var touchStartPos = 0;
     var touchStopPos = 0;
     var touchMinLength = 90;
-    document.addEventListener("touchstart", function(e) {
-      e.preventDefault();
-      if (
-        e.type == "touchstart" ||
-        e.type == "touchmove" ||
-        e.type == "touchend" ||
-        e.type == "touchcancel"
-      ) {
-        var touch = e.touches[0] || e.changedTouches[0];
-        touchStartPos = touch.pageY;
-      }
-      if (e.target.classList.contains("burger-menu")) {
-        burgerMenu.classList.toggle("menu-on");
-        if (burgerMenu.classList.contains("menu-on")) {
-          document.querySelector("nav").style.zIndex = "auto";
-          root.style.setProperty("--opacity1", "0");
-          root.style.setProperty("--opacity2", "1");
-          document.querySelector(".menu").classList.remove("hide");
-          document.querySelector(".menu").classList.add("fade-in-menu");
-          setTimeout(() => {
-            document.querySelector(".menu").classList.remove("fade-in-menu");
-          }, 500);
-        } else {
-          document.querySelector("nav").style.zIndex = "97";
-          root.style.setProperty("--opacity1", "1");
-          root.style.setProperty("--opacity2", "0");
-          document.querySelector(".menu").classList.add("fade-out-menu");
-          setTimeout(() => {
-            document.querySelector(".menu").classList.add("hide");
-            document.querySelector(".menu").classList.remove("fade-out-menu");
-          }, 500);
+    document.addEventListener(
+      "touchstart",
+      function(e) {
+        e.preventDefault();
+        if (
+          e.type == "touchstart" ||
+          e.type == "touchmove" ||
+          e.type == "touchend" ||
+          e.type == "touchcancel"
+        ) {
+          var touch = e.touches[0] || e.changedTouches[0];
+          touchStartPos = touch.pageY;
         }
-        document.querySelector("body").classList.toggle("no-scroll");
-      }
-    });
-    document.addEventListener("touchend", function(e) {
-      e.preventDefault();
-      if (
-        e.type == "touchstart" ||
-        e.type == "touchmove" ||
-        e.type == "touchend" ||
-        e.type == "touchcancel"
-      ) {
-        var touch = e.touches[0] || e.changedTouches[0];
-        touchStopPos = touch.pageY;
-      }
-      if (touchStartPos + touchMinLength < touchStopPos) {
-        changeSlide(-1);
-      } else if (touchStartPos > touchStopPos + touchMinLength) {
-        changeSlide(1);
-      }
-    });
+        if (e.target.classList.contains("burger-menu")) {
+          burgerMenu.classList.toggle("menu-on");
+          if (burgerMenu.classList.contains("menu-on")) {
+            document.querySelector("nav").style.zIndex = "auto";
+            root.style.setProperty("--opacity1", "0");
+            root.style.setProperty("--opacity2", "1");
+            document.querySelector(".menu").classList.remove("hide");
+            document.querySelector(".menu").classList.add("fade-in-menu");
+            setTimeout(() => {
+              document.querySelector(".menu").classList.remove("fade-in-menu");
+            }, 500);
+          } else {
+            document.querySelector("nav").style.zIndex = "97";
+            root.style.setProperty("--opacity1", "1");
+            root.style.setProperty("--opacity2", "0");
+            document.querySelector(".menu").classList.add("fade-out-menu");
+            setTimeout(() => {
+              document.querySelector(".menu").classList.add("hide");
+              document.querySelector(".menu").classList.remove("fade-out-menu");
+            }, 500);
+          }
+          document.querySelector("body").classList.toggle("no-scroll");
+        }
+      },
+      { passive: false }
+    );
+    document.addEventListener(
+      "touchend",
+      function(e) {
+        e.preventDefault();
+        if (
+          e.type == "touchstart" ||
+          e.type == "touchmove" ||
+          e.type == "touchend" ||
+          e.type == "touchcancel"
+        ) {
+          var touch = e.touches[0] || e.changedTouches[0];
+          touchStopPos = touch.pageY;
+        }
+        if (touchStartPos + touchMinLength < touchStopPos) {
+          changeSlide(-1);
+        } else if (touchStartPos > touchStopPos + touchMinLength) {
+          changeSlide(1);
+        }
+      },
+      { passive: false }
+    );
   };
 
   // prevent double scrolling
