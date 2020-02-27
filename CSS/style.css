@@ -811,6 +811,7 @@ footer img {
   /* Buttons medium */
   .buttons {
     flex-wrap: wrap;
+    margin-top: 25vh;
   }
 
   .buttons button {
