@@ -328,39 +328,39 @@ var slider = function(sliderElement) {
     });
 
     // stuff for touch devices
-  //   var touchStartPos = 0;
-  //   var touchStopPos = 0;
-  //   var touchMinLength = 90;
-  //   document.addEventListener("touchstart", function(e) {
-  //     e.preventDefault();
-  //     if (
-  //       e.type == "touchstart" ||
-  //       e.type == "touchmove" ||
-  //       e.type == "touchend" ||
-  //       e.type == "touchcancel"
-  //     ) {
-  //       var touch = e.touches[0] || e.changedTouches[0];
-  //       touchStartPos = touch.pageY;
-  //     }
-  //   });
-  //   document.addEventListener("touchend", function(e) {
-  //     e.preventDefault();
-  //     if (
-  //       e.type == "touchstart" ||
-  //       e.type == "touchmove" ||
-  //       e.type == "touchend" ||
-  //       e.type == "touchcancel"
-  //     ) {
-  //       var touch = e.touches[0] || e.changedTouches[0];
-  //       touchStopPos = touch.pageY;
-  //     }
-  //     if (touchStartPos + touchMinLength < touchStopPos) {
-  //       changeSlide(-1);
-  //     } else if (touchStartPos > touchStopPos + touchMinLength) {
-  //       changeSlide(1);
-  //     }
-  //   });
-  // };
+    var touchStartPos = 0;
+    var touchStopPos = 0;
+    var touchMinLength = 90;
+    document.addEventListener("touchstart", function(e) {
+      e.preventDefault();
+      if (
+        e.type == "touchstart" ||
+        e.type == "touchmove" ||
+        e.type == "touchend" ||
+        e.type == "touchcancel"
+      ) {
+        var touch = e.touches[0] || e.changedTouches[0];
+        touchStartPos = touch.pageY;
+      }
+    });
+    document.addEventListener("touchend", function(e) {
+      e.preventDefault();
+      if (
+        e.type == "touchstart" ||
+        e.type == "touchmove" ||
+        e.type == "touchend" ||
+        e.type == "touchcancel"
+      ) {
+        var touch = e.touches[0] || e.changedTouches[0];
+        touchStopPos = touch.pageY;
+      }
+      if (touchStartPos + touchMinLength < touchStopPos) {
+        changeSlide(-1);
+      } else if (touchStartPos > touchStopPos + touchMinLength) {
+        changeSlide(1);
+      }
+    });
+  };
 
   // prevent double scrolling
   var detectChangeEnd = function() {

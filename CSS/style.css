@@ -590,8 +590,6 @@ nav {
 }
 
 .subscription-grid div button {
-  padding: 30px;
-  width: 300px;
   border: 1px solid var(--main-text-color);
   background-color: var(--main-text-color);
   color: var(--main-color);
