@@ -94,6 +94,7 @@ body {
   position: absolute;
   top: 0;
   z-index: 100;
+  margin-top: -10vh;
 }
 
 .loader {
