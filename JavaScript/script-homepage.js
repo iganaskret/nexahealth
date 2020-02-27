@@ -105,7 +105,7 @@ var isInViewport = function(elem) {
 };
 
 function animateChat() {
-  body.classList.add("scroll-stop");
+  // body.classList.add("scroll-stop");
 
   document.querySelectorAll(".messages .msg").forEach(msg => {
     msg.style.gridRow = counter;
