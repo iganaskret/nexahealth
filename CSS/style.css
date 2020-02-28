@@ -206,7 +206,6 @@ nav {
   padding: 40px;
   z-index: 110;
   cursor: pointer;
-  border: 1px solid green;
 }
 
 .burger {
@@ -810,7 +809,6 @@ footer img {
     padding: 30px;
     z-index: 110;
     cursor: pointer;
-    border: 1px solid green;
   }
 
   .burger {
@@ -1002,6 +1000,7 @@ footer img {
     min-width: 200px;
     display: inline-block;
     padding: 20px;
+    margin-left: 30px;
   }
 
   /* Homepage content small */

@@ -35,17 +35,22 @@ function loaded() {
 //   document.querySelector(".logo").innerHTML = data;
 // }
 
-logoSmall.addEventListener("touch", openHomepage);
-logoSmall.addEventListener("click", openHomepage);
+logoSmall.addEventListener("touchstart", openHomepage);
+
+// logoSmall.addEventListener("click", openHomepage);
+
+// logoSmall.addEventListener("touchstart", () => {
+//   console.log("clicked logo");
+// });
 
 function openHomepage() {
   if (
     document.querySelectorAll(".user-type a")[0].classList.contains("disabled")
   ) {
-    window.open("citizen.html", _self);
+    window.open("citizen.html", "_self");
     console.log("citizen");
   } else {
-    window.open("health-professional.html", _self);
+    window.open("health-professional.html", "_self");
     console.log("citizen nie");
   }
 }
