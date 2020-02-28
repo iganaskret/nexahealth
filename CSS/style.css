@@ -202,6 +202,7 @@ nav {
   padding: 40px;
   z-index: 110;
   cursor: pointer;
+  border: 1px solid red;
 }
 
 .burger {
@@ -783,7 +784,74 @@ footer img {
   /* Logo medium */
   .logo {
     width: 30%;
-    min-width: 100px;
+    min-width: 200px;
+  }
+
+  /* Burger menu */
+  .burger-menu {
+    position: absolute;
+    display: inline-block;
+    top: 15px;
+    left: 10px;
+    padding: 30px;
+    z-index: 110;
+    cursor: pointer;
+    /* border: 1px solid red; */
+  }
+
+  .burger {
+    position: absolute;
+    background-color: var(--main-text-color);
+    display: block;
+    width: 26px;
+    height: 8px;
+    top: 15px;
+    left: 5px;
+    margin-top: 0px;
+  }
+
+  .burger:before {
+    position: absolute;
+    content: "";
+    background-color: var(--main-text-color);
+    display: block;
+    width: 40px;
+    height: 8px;
+    top: 15px;
+  }
+
+  .burger:after {
+    position: absolute;
+    content: "";
+    background-color: var(--main-text-color);
+    display: block;
+    width: 40px;
+    height: 8px;
+    bottom: 15px;
+  }
+
+  .burger::after,
+  .burger::before,
+  .burger {
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+  }
+  .burger-menu.menu-on .burger::after {
+    transform: rotate(-45deg);
+    background-color: var(--main-color);
+    -webkit-transform: rotate(-45deg);
+    bottom: 0px;
+    z-index: 998;
+  }
+  .burger-menu.menu-on .burger::before {
+    transform: rotate(45deg);
+    background-color: var(--main-color);
+    -webkit-transform: rotate(45deg);
+    top: 0px;
+    z-index: 999;
+  }
+  .burger-menu.menu-on .burger {
+    width: 0;
   }
 
   /* User type */
@@ -801,7 +869,7 @@ footer img {
   }
 
   /* Burger menu medium */
-  .burger-menu {
+  /* .burger-menu {
     left: 20px;
     top: 15%;
   }
@@ -821,7 +889,7 @@ footer img {
     width: 34px;
     height: 6px;
     bottom: 11px;
-  }
+  } */
 
   .vision,
   .team-content {
@@ -884,7 +952,7 @@ footer img {
 /* Small screen */
 @media all and (max-width: 420px) {
   /* Burger menu small */
-  .burger-menu {
+  /* .burger-menu {
     top: 15px;
     left: 10px;
     padding: 0;
@@ -908,7 +976,7 @@ footer img {
     width: 20px;
     height: 4px;
     bottom: 7px;
-  }
+  } */
 
   /* Homepage content small */
   #homepage-content .post-content :nth-child(4),
