@@ -809,7 +809,7 @@ footer img {
     padding: 30px;
     z-index: 110;
     cursor: pointer;
-    border: 1px solid red;
+    border: 1px solid green;
   }
 
   .burger {
