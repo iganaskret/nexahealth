@@ -8,6 +8,8 @@ const content = document.querySelector(".content");
 const burgerMenu = document.querySelector(".burger-menu");
 const loaderWrapper = document.querySelector(".wrapper");
 let user = document.querySelector(".user-type .disabled").textContent;
+// let logo = document.querySelector(".logo");
+let logoSmall = document.querySelector(".logo-small");
 let counter = 1;
 console.log(user);
 loaded();
@@ -32,6 +34,21 @@ function loaded() {
 // function loadSVGlogo(data) {
 //   document.querySelector(".logo").innerHTML = data;
 // }
+
+logoSmall.addEventListener("touch", openHomepage);
+logoSmall.addEventListener("click", openHomepage);
+
+function openHomepage() {
+  if (
+    document.querySelectorAll(".user-type a")[0].classList.contains("disabled")
+  ) {
+    window.open("citizen.html", _self);
+    console.log("citizen");
+  } else {
+    window.open("health-professional.html", _self);
+    console.log("citizen nie");
+  }
+}
 
 var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 if (iOS) {

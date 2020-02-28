@@ -159,6 +159,10 @@ nav {
   padding: 10px;
 }
 
+.logo-small {
+  display: none;
+}
+
 /* User type */
 .user-type {
   float: right;
@@ -721,6 +725,15 @@ footer img {
 
 /* Medium big screen */
 @media all and (max-width: 1024px) {
+  .menu li:hover {
+    opacity: initial;
+    transform: initial;
+  }
+
+  .menu li.active {
+    pointer-events: none;
+  }
+
   /* User type medium big*/
   .user-type {
     display: none;
@@ -977,6 +990,18 @@ footer img {
     height: 4px;
     bottom: 7px;
   } */
+
+  /* Logo */
+  .logo {
+    display: none;
+  }
+
+  .logo-small {
+    width: 10%;
+    min-width: 200px;
+    display: inline-block;
+    padding: 0px;
+  }
 
   /* Homepage content small */
   #homepage-content .post-content :nth-child(4),
