@@ -33,6 +33,37 @@ function loaded() {
 //   document.querySelector(".logo").innerHTML = data;
 // }
 
+var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+if (iOS) {
+  console.log("We are in IOS browser");
+} else {
+  console.log("We are NOT in IOS browser");
+}
+// if (iOS) {
+burgerMenu.addEventListener("touchstart", () => {
+  burgerMenu.classList.toggle("menu-on");
+  if (burgerMenu.classList.contains("menu-on")) {
+    document.querySelector("nav").style.zIndex = "auto";
+    root.style.setProperty("--opacity1", "0");
+    root.style.setProperty("--opacity2", "1");
+    document.querySelector(".menu").classList.remove("hide");
+    document.querySelector(".menu").classList.add("fade-in-menu");
+    setTimeout(() => {
+      document.querySelector(".menu").classList.remove("fade-in-menu");
+    }, 500);
+  } else {
+    document.querySelector("nav").style.zIndex = "97";
+    root.style.setProperty("--opacity1", "1");
+    root.style.setProperty("--opacity2", "0");
+    document.querySelector(".menu").classList.add("fade-out-menu");
+    setTimeout(() => {
+      document.querySelector(".menu").classList.add("hide");
+      document.querySelector(".menu").classList.remove("fade-out-menu");
+    }, 500);
+  }
+  document.querySelector("body").classList.toggle("no-scroll");
+});
+
 // Open / close burger menu
 burgerMenu.addEventListener("click", () => {
   burgerMenu.classList.toggle("menu-on");
@@ -57,6 +88,32 @@ burgerMenu.addEventListener("click", () => {
   }
   document.querySelector("body").classList.toggle("no-scroll");
 });
+// } else {
+//   // Open / close burger menu
+//   burgerMenu.addEventListener("click", () => {
+//     burgerMenu.classList.toggle("menu-on");
+//     if (burgerMenu.classList.contains("menu-on")) {
+//       document.querySelector("nav").style.zIndex = "auto";
+//       root.style.setProperty("--opacity1", "0");
+//       root.style.setProperty("--opacity2", "1");
+//       document.querySelector(".menu").classList.remove("hide");
+//       document.querySelector(".menu").classList.add("fade-in-menu");
+//       setTimeout(() => {
+//         document.querySelector(".menu").classList.remove("fade-in-menu");
+//       }, 500);
+//     } else {
+//       document.querySelector("nav").style.zIndex = "97";
+//       root.style.setProperty("--opacity1", "1");
+//       root.style.setProperty("--opacity2", "0");
+//       document.querySelector(".menu").classList.add("fade-out-menu");
+//       setTimeout(() => {
+//         document.querySelector(".menu").classList.add("hide");
+//         document.querySelector(".menu").classList.remove("fade-out-menu");
+//       }, 500);
+//     }
+//     document.querySelector("body").classList.toggle("no-scroll");
+//   });
+// }
 
 // Fetch and display from Wordpress
 function loadData() {
