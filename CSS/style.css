@@ -598,6 +598,10 @@ nav {
 }
 
 /* Subscription */
+.subscribe-btn {
+  display: none;
+}
+
 .subscription {
   background-color: var(--main-color);
   height: 100vh;
@@ -1003,6 +1007,17 @@ footer img {
     margin-left: 30px;
   }
 
+  /* Menu small */
+  .menu ul {
+    margin-top: 30%;
+    padding: 0;
+  }
+
+  .menu li {
+    margin: 0px;
+    font-size: 25px;
+  }
+
   /* Homepage content small */
   #homepage-content .post-content :nth-child(4),
   #homepage-content .post-content :nth-child(5),
@@ -1043,8 +1058,30 @@ footer img {
     padding: 10px 15px;
   }
 
-  #subscription-main {
-    width: 90%;
+  .subscribe-btn {
+    display: block;
+  }
+
+  .subscribe-btn button {
+    display: block;
+    background-color: var(--main-text-color);
+    border: none;
+    width: 300px;
+    color: var(--main-color);
+    font-family: var(--font);
+    font-size: 25px;
+    padding: 10px;
+    cursor: pointer;
+    margin: 0 auto;
+  }
+
+  .subscribe-btn a {
+    text-decoration: none;
+  }
+
+  #subscription-main form {
+    /* width: 90%; usunac form */
+    display: none;
   }
 
   /* Subscription small */

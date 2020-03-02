@@ -48,10 +48,8 @@ function openHomepage() {
     document.querySelectorAll(".user-type a")[0].classList.contains("disabled")
   ) {
     window.open("citizen.html", "_self");
-    console.log("citizen");
   } else {
     window.open("health-professional.html", "_self");
-    console.log("citizen nie");
   }
 }
 
@@ -276,6 +274,18 @@ function animateChat() {
 //   }, config);
 //   observer.observe(video);
 // }
+
+if (!document.querySelector(".subscribe-btn").classList.contains("hide")) {
+  document
+    .querySelector(".subscribe-btn button")
+    .addEventListener("touchstart", () => {
+      if (user == "Citizen") {
+        window.open("subscription.html?citizen", "_self");
+      } else {
+        window.open("subscription.html?health-professional", "_self");
+      }
+    });
+}
 
 loadData(postLink);
 // videoControl();
