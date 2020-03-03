@@ -1083,9 +1083,8 @@ footer img {
   }
 
   .animation {
-    border: none;
-    margin: 2vh 0;
-    height: 70%;
+    margin: 0vh 0;
+    height: 80%;
     /* text-align: center; */
     padding: 20px 10px 0;
   }
