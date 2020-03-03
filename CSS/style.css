@@ -683,8 +683,15 @@ nav {
 }
 
 /* Team */
+.team h2,
+.team h3,
+.team h4 {
+  font-size: 30px;
+  margin: 10px;
+}
+
 .team .post-container {
-  padding: 0 50px;
+  padding: 0 100px;
   transform: translateY(-50px);
 }
 
@@ -692,11 +699,26 @@ nav {
   text-align: center;
 }
 
+.team .post div {
+  margin-bottom: 100px;
+}
+
 .team .team-members {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   text-align: justify;
   grid-gap: 50px;
+  margin-bottom: 50px;
+}
+
+.team .team-members div {
+  margin: 0;
+}
+
+.team .team-members h3,
+.team .team-members h4 {
+  text-transform: uppercase;
+  text-align: center;
 }
 
 /* Footer */
@@ -762,6 +784,32 @@ footer img {
     margin-bottom: 15vh;
   }
 
+  #subscription-main form {
+    /* width: 90%; usunac form */
+    display: none;
+  }
+
+  .subscribe-btn {
+    display: block;
+  }
+
+  .subscribe-btn button {
+    display: block;
+    background-color: var(--main-text-color);
+    border: none;
+    width: 300px;
+    color: var(--main-color);
+    font-family: var(--font);
+    font-size: 25px;
+    padding: 10px;
+    cursor: pointer;
+    margin: 0 auto;
+  }
+
+  .subscribe-btn a {
+    text-decoration: none;
+  }
+
   /* Subscription medium big */
   .subscription {
     font-size: 20px;
@@ -783,6 +831,45 @@ footer img {
 
   .subscription form input[type="submit"] {
     font-size: 20px;
+  }
+
+  /* Team medium big*/
+  .team h2,
+  .team h3,
+  .team h4 {
+    font-size: 30px;
+    margin: 10px;
+  }
+
+  .team .post-container {
+    padding: 0 50px;
+    transform: translateY(0px);
+  }
+
+  .team .post {
+    text-align: center;
+  }
+
+  .team .post div {
+    margin-bottom: 100px;
+  }
+
+  .team .team-members {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    text-align: justify;
+    grid-gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  .team .team-members div {
+    margin: 0;
+  }
+
+  .team .team-members h3,
+  .team .team-members h4 {
+    text-transform: uppercase;
+    text-align: center;
   }
 }
 
@@ -1056,32 +1143,6 @@ footer img {
 
   .animation .msg {
     padding: 10px 15px;
-  }
-
-  .subscribe-btn {
-    display: block;
-  }
-
-  .subscribe-btn button {
-    display: block;
-    background-color: var(--main-text-color);
-    border: none;
-    width: 300px;
-    color: var(--main-color);
-    font-family: var(--font);
-    font-size: 25px;
-    padding: 10px;
-    cursor: pointer;
-    margin: 0 auto;
-  }
-
-  .subscribe-btn a {
-    text-decoration: none;
-  }
-
-  #subscription-main form {
-    /* width: 90%; usunac form */
-    display: none;
   }
 
   /* Subscription small */

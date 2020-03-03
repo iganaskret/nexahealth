@@ -133,17 +133,12 @@
           </div>
         </section>
         <section id="subscription" class="subscription">
-          <!-- <div class="subscription-grid">
-            <div class="subscribe">
-              <a href="subscription.html?health-professional"><button>Subscribe</button></a>
-            </div>
-            <div class="schedule">
-              <a href="schedule.html?health-professional"
-                ><button>Schedule a meeting</button></a
+          <div class="subscription-form" id="subscription-main">
+            <div class="subscribe-btn">
+              <a href="subscription.html?health-professional"
+                ><button>Subscribe to the newsletter to learn more</button></a
               >
             </div>
-          </div> -->
-          <div class="subscription-form" id="subscription-main">
             <form>
               <label for="fname" style="white-space:nowrap"
                 >My name is <input type="text" id="fname" name="fname" />
@@ -189,14 +184,28 @@
       <div class="menu hide">
         <ul class="subheader">
           <li class="active">HOMEPAGE</li>
-          <li><a href="vision.html?health-professional">VISION</a></li>
-          <li><a href="team.html?health-professional">TEAM</a></li>
-          <li>
+          <li
+            ontouchstart="window.open('vision.html?health-professional', '_self')"
+          >
+            <a href="vision.html?health-professional">VISION</a>
+          </li>
+          <li
+            ontouchstart="window.open('team.html?health-professional', '_self')"
+          >
+            <a href="team.html?health-professional">TEAM</a>
+          </li>
+          <li
+            ontouchstart="window.open('subscription.html?health-professional', '_self')"
+          >
             <a href="subscription.html?health-professional">SUBSCRIPTION</a>
           </li>
         </ul>
         <div class="user-type-menu">
-          <a href="citizen.html">Citizen</a>
+          <a
+            href="citizen.html"
+            ontouchstart="window.open('citizen.html', '_self')"
+            >Citizen</a
+          >
           <span> / </span>
           <a href="health-professional.html" class="disabled"
             >Health professional</a
