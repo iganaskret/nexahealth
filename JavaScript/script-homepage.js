@@ -26,22 +26,7 @@ function loaded() {
   content.classList.remove("hide");
 }
 
-// Fetch SVG logo
-// fetch("../Images/logo-final-1.svg")
-//   .then(e => e.text())
-//   .then(data => loadSVGlogo(data));
-
-// function loadSVGlogo(data) {
-//   document.querySelector(".logo").innerHTML = data;
-// }
-
 logoSmall.addEventListener("touchstart", openHomepage);
-
-// logoSmall.addEventListener("click", openHomepage);
-
-// logoSmall.addEventListener("touchstart", () => {
-//   console.log("clicked logo");
-// });
 
 function openHomepage() {
   if (
@@ -88,33 +73,6 @@ function openMenu() {
   }
   document.querySelector("body").classList.toggle("no-scroll");
 }
-
-// } else {
-//   // Open / close burger menu
-//   burgerMenu.addEventListener("click", () => {
-//     burgerMenu.classList.toggle("menu-on");
-//     if (burgerMenu.classList.contains("menu-on")) {
-//       document.querySelector("nav").style.zIndex = "auto";
-//       root.style.setProperty("--opacity1", "0");
-//       root.style.setProperty("--opacity2", "1");
-//       document.querySelector(".menu").classList.remove("hide");
-//       document.querySelector(".menu").classList.add("fade-in-menu");
-//       setTimeout(() => {
-//         document.querySelector(".menu").classList.remove("fade-in-menu");
-//       }, 500);
-//     } else {
-//       document.querySelector("nav").style.zIndex = "97";
-//       root.style.setProperty("--opacity1", "1");
-//       root.style.setProperty("--opacity2", "0");
-//       document.querySelector(".menu").classList.add("fade-out-menu");
-//       setTimeout(() => {
-//         document.querySelector(".menu").classList.add("hide");
-//         document.querySelector(".menu").classList.remove("fade-out-menu");
-//       }, 500);
-//     }
-//     document.querySelector("body").classList.toggle("no-scroll");
-//   });
-// }
 
 // Fetch and display from Wordpress
 function loadData() {
@@ -163,7 +121,7 @@ var isInViewport = function(elem) {
 };
 
 function animateChat() {
-  // body.classList.add("scroll-stop");
+  body.classList.add("scroll-stop");
 
   document.querySelectorAll(".messages .msg").forEach(msg => {
     msg.style.gridRow = counter;
@@ -185,20 +143,6 @@ function animateChat() {
       setTimeout(function() {
         // let marginValue = 100 - i * 6.5;
         document.querySelectorAll(".msg")[i].style.opacity = 1;
-        console.log();
-        // if (i == 0) {
-        //   document.querySelectorAll(".msg")[i].classList.add("just-opacity");
-
-        // } else if (i == 1) {
-        //   document
-        //     .querySelectorAll(".msg")
-        //     [i - 1].classList.add("opacity-margin");
-        //   document.querySelectorAll(".msg")[i].classList.add("opacity-margin");
-        // } else {
-        //   document.querySelectorAll(".msg")[i].classList.add("opacity-margin");
-        //   document.querySelectorAll(".msg")[0].classList.remove("just-opacity");
-        // }
-
         position = 16;
         document.querySelectorAll(".msg")[i].classList.add("move-up");
         document.querySelectorAll(".msg")[i].style.gridRow = position;
@@ -218,6 +162,15 @@ function animateChat() {
           document.querySelectorAll(".msg p")[i].style.display = "block";
           document.querySelectorAll(".msg .span-div")[i].style.display = "none";
         }, 2000);
+        if (
+          i == 15 &&
+          getComputedStyle(document.querySelectorAll(".post-chunk")[3], null)
+            .display != "none"
+        ) {
+          document.querySelector(".skip").style.display = "none";
+          document.querySelector("#arrow1").classList.remove("hide");
+          document.querySelector("#arrow1").style.display = "flex";
+        }
       }, 3000 * i);
     }
   }, 2000);
@@ -229,51 +182,12 @@ function animateChat() {
     if (isInViewport(lastMsg)) {
       setTimeout(function() {
         body.classList.remove("scroll-stop");
-      }, 3000);
-
-      // alert("jes");
+      }, 2000);
     } else {
       body.classList.add("scroll-stop");
     }
   });
-
-  // for (i = 0; i < 16; i++) {
-  //   let j = i + 1;
-  //   document.querySelectorAll(".animation .messages p")[
-  //     i
-  //   ].style.animationDelay = j + "s";
-  // }
 }
-
-// function showPrototype() {
-//   //show prototype on small screens
-//   document.querySelector(".video-btn").addEventListener("click", () => {
-//     document.querySelector(".video-modal").classList.remove("hide");
-//   });
-//   document.querySelector(".close-burger").addEventListener("click", () => {
-//     document.querySelector(".video-modal").classList.add("hide");
-//   });
-// }
-
-// function videoControl() {
-//   const video = document.querySelector(".video");
-//   const config = {
-//     root: null, //document.querySelector('#some-element')
-//     rootMargin: "0px",
-//     threshold: [0, 0.5, 0.75, 1]
-//   };
-//   let observer = new IntersectionObserver(entries => {
-//     entries.forEach(entry => {
-//       if (entry.intersectionRatio > 0.35) {
-//         document.querySelector("#chatbox-video").play();
-//       } else {
-//         document.querySelector("#chatbox-video").pause();
-//       }
-//       // console.log(entry.intersectionRatio);
-//     });
-//   }, config);
-//   observer.observe(video);
-// }
 
 if (!document.querySelector(".subscribe-btn").classList.contains("hide")) {
   document
@@ -288,4 +202,3 @@ if (!document.querySelector(".subscribe-btn").classList.contains("hide")) {
 }
 
 loadData(postLink);
-// videoControl();

@@ -61,7 +61,7 @@ body {
 /* Loader */
 .index-container {
   position: relative;
-  top: 25vh;
+  top: 35vh;
   display: flex;
   justify-content: center;
 }
@@ -319,13 +319,14 @@ nav {
 
 /* Arrow down */
 .arrow-down {
-  display: flex;
-  justify-content: center;
+  /* display: flex; */
+  justify-content: flex-end;
   height: 8px;
   opacity: 0.5;
   transition: all 0.4s ease-in-out;
   animation: pulse 1.5s infinite ease-in-out;
-  padding-top: 20%;
+  margin-top: -20px;
+  margin-right: 20px;
 }
 
 @keyframes pulse {
@@ -354,9 +355,6 @@ nav {
 }
 
 /* Animation */
-#landing {
-}
-
 .animation {
   overflow: scroll;
   display: flex;
@@ -364,15 +362,14 @@ nav {
   height: 80%;
   border: 4px solid var(--main-text-color);
   margin: 2vh 10vw;
-  /* text-align: center; */
-  padding: 20px 10px 0;
+  padding: 30px 10px 0;
 }
 
 .messages {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /* grid-template-rows: repeat(16, 1fr); */
   transition: all 2s ease-in-out;
+  padding: 10px 0 0;
 }
 
 .animation .msg {
@@ -381,19 +378,25 @@ nav {
   background-color: var(--main-text-color);
   border-radius: 25px;
   margin: 10px 0;
-  /* float: left; */
   padding: 10px 20px;
-  /* text-align: center; */
-  /* max-width: 350px; */
   justify-self: start;
   position: relative;
   bottom: 0;
   opacity: 0;
-  /* display: none; */
   display: block;
   transition: all 2s ease-in-out;
+}
 
-  /* animation: show-message 7s ease-in-out forwards; */
+.skip {
+  font-size: 30px;
+  color: var(--main-text-color);
+  position: absolute;
+  bottom: 100px;
+  right: 20px;
+}
+
+.skip:hover {
+  cursor: pointer;
 }
 
 /* .animation .msg:nth-of-type(1) {
@@ -478,11 +481,6 @@ nav {
   /* grid-row: 3; */
 }
 
-.animation .msg.last-msg {
-  /* color: green;
-  background-color: red; */
-}
-
 .animation .span-div span {
   display: inline-block;
   width: 7px;
@@ -551,6 +549,12 @@ nav {
 }
 
 .blue {
+  display: flex;
+  justify-content: center;
+  height: 8px;
+  opacity: 0.5;
+  transition: all 0.4s ease-in-out;
+  animation: pulse 1.5s infinite ease-in-out;
   align-self: end;
   margin-bottom: 18vh;
   padding-top: 0;
@@ -953,9 +957,6 @@ footer img {
 
   /* User type */
   .user-type {
-    /* float: right;
-    padding: 20px;
-    transform: translateY(-80px); */
     position: relative;
     right: 2%;
     top: 15%;
@@ -964,29 +965,6 @@ footer img {
   .user-type-menu {
     color: var(--main-color);
   }
-
-  /* Burger menu medium */
-  /* .burger-menu {
-    left: 20px;
-    top: 15%;
-  }
-
-  .burger {
-    width: 20px;
-    height: 6px;
-  }
-
-  .burger:before {
-    width: 34px;
-    height: 6px;
-    top: 11px;
-  }
-
-  .burger:after {
-    width: 34px;
-    height: 6px;
-    bottom: 11px;
-  } */
 
   .vision,
   .team-content {
@@ -1008,6 +986,10 @@ footer img {
   #homepage-content .post-container,
   #homepage-content2 .post-container2 {
     margin: 10% 7vh 8%;
+  }
+
+  .skip {
+    display: none;
   }
 
   /* Subscription medium */
@@ -1048,37 +1030,6 @@ footer img {
 
 /* Small screen */
 @media all and (max-width: 420px) {
-  /* Burger menu small */
-  /* .burger-menu {
-    top: 15px;
-    left: 10px;
-    padding: 0;
-  }
-
-  .burger {
-    width: 13px;
-    height: 4px;
-    top: 25px;
-    left: 30px;
-    margin-top: -7px;
-  }
-
-  .burger:before {
-    width: 20px;
-    height: 4px;
-    top: 7px;
-  }
-
-  .burger:after {
-    width: 20px;
-    height: 4px;
-    bottom: 7px;
-  } */
-
-  .loader-bg {
-    margin-top: -20vh;
-  }
-
   /* Logo */
   .logo {
     display: none;
@@ -1141,6 +1092,11 @@ footer img {
 
   .animation .msg {
     padding: 10px 15px;
+  }
+
+  .arrow-down#arrow1,
+  .skip {
+    display: none;
   }
 
   /* Subscription small */
