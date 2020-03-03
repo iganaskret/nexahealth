@@ -5,6 +5,7 @@ const body = document.querySelector("body");
 // const content = document.querySelector(".schedule-content");
 const burgerMenu = document.querySelector(".burger-menu");
 const url = window.location.href;
+const template = document.querySelector("template").content;
 typeOfUser(url);
 
 const loaderWrapper = document.querySelector(".wrapper-subpage");
@@ -98,7 +99,7 @@ function displayData() {
       icon.classList.add("icon-vission");
       icon.setAttribute(
         "src",
-        "../Images/" + div.querySelector("h2").textContent + ".png"
+        "Images/" + div.querySelector("h2").textContent + ".png"
       );
       div.insertBefore(icon, div.querySelector("h2"));
     }
