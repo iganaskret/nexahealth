@@ -5,7 +5,7 @@ const body = document.querySelector("body");
 // const content = document.querySelector(".schedule-content");
 const burgerMenu = document.querySelector(".burger-menu");
 const url = window.location.href;
-const template = document.querySelector("template").content;
+// const template = document.querySelector("template").content;
 typeOfUser(url);
 
 const loaderWrapper = document.querySelector(".wrapper-subpage");

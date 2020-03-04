@@ -136,14 +136,14 @@ function animateChat() {
     msg.appendChild(spanDiv);
     counter++;
   });
-  document.querySelectorAll(".msg")[15].classList.add("last-msg");
+  document.querySelectorAll(".msg")[16].classList.add("last-msg");
   setTimeout(function() {
     let j, position;
-    for (let i = 0; i < 16; i++) {
+    for (let i = 0; i < 17; i++) {
       setTimeout(function() {
         // let marginValue = 100 - i * 6.5;
         document.querySelectorAll(".msg")[i].style.opacity = 1;
-        position = 16;
+        position = 17;
         document.querySelectorAll(".msg")[i].classList.add("move-up");
         document.querySelectorAll(".msg")[i].style.gridRow = position;
         j = i;
@@ -163,7 +163,7 @@ function animateChat() {
           document.querySelectorAll(".msg .span-div")[i].style.display = "none";
         }, 2000);
         if (
-          i == 15 &&
+          i == 16 &&
           getComputedStyle(document.querySelectorAll(".post-chunk")[3], null)
             .display != "none"
         ) {

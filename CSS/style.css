@@ -365,7 +365,7 @@ nav {
   display: flex;
   flex-direction: column-reverse;
   height: 80%;
-  border: 4px solid var(--main-text-color);
+  /* border: 4px solid var(--main-text-color); */
   margin: 2vh 10vw;
   padding: 30px 10px 0;
 }
@@ -433,7 +433,7 @@ nav {
   height: 20px;
 }
 
-.animation .msg:nth-of-type(odd):before {
+.animation .msg:nth-of-type(even):before {
   right: -7px;
   border: solid 2px var(--main-text-color);
   width: 20px;
@@ -444,7 +444,7 @@ nav {
   background: var(--main-color);
 }
 
-.animation .msg:nth-of-type(odd):after {
+.animation .msg:nth-of-type(even):after {
   right: -41px;
   width: 9px;
   background-color: var(--main-color);
@@ -455,7 +455,7 @@ nav {
   transform: translate(-30px, -2px);
 }
 
-.animation .msg:nth-of-type(even):before {
+.animation .msg:nth-of-type(odd):before {
   left: -7px;
   width: 20px;
   background-color: var(--main-text-color);
@@ -465,7 +465,7 @@ nav {
   transform: translate(0, -2px);
 }
 
-.animation .msg:nth-of-type(even):after {
+.animation .msg:nth-of-type(odd):after {
   left: 4px;
   width: 26px;
   background: var(--main-color);
@@ -480,7 +480,7 @@ nav {
   display: none;
 }
 
-.animation .msg:nth-of-type(odd) {
+.animation .msg:nth-of-type(even) {
   border: 2px solid var(--main-text-color);
   background-color: transparent;
   color: var(--main-text-color);
@@ -500,7 +500,7 @@ nav {
   animation: wave 1s linear infinite;
 }
 
-.animation .msg:nth-of-type(odd) span {
+.animation .msg:nth-of-type(even) span {
   background-color: var(--main-text-color);
 }
 
