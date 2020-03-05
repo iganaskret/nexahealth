@@ -10,6 +10,7 @@ const loaderWrapper = document.querySelector(".wrapper");
 let user = document.querySelector(".user-type .disabled").textContent;
 // let logo = document.querySelector(".logo");
 let logoSmall = document.querySelector(".logo-small");
+let timer = 2000;
 let counter = 1;
 console.log(user);
 loaded();
@@ -120,11 +121,19 @@ var isInViewport = function(elem) {
   );
 };
 
+// var myFunction = function() {
+//   timer *= 10;
+//   console.log("eyyy", timer);
+//   setTimeout(myFunction, timer);
+// };
+
+// //basically to jest włączenie tego settimeoutu z wnetrza animatechat, tego foreach
+// setTimeout(myFunction, timer);
+
 function animateChat() {
   body.classList.add("scroll-stop");
-
   document.querySelectorAll(".messages .msg").forEach(msg => {
-    msg.style.gridRow = counter;
+    // msg.style.gridRow = counter;
     let spanDiv = document.createElement("div");
     spanDiv.classList.add("span-div");
     for (let i = 0; i < 3; i++) {
@@ -139,12 +148,24 @@ function animateChat() {
   document.querySelectorAll(".msg")[16].classList.add("last-msg");
   setTimeout(function() {
     let j, position;
+    let bubbles = true;
     for (let i = 0; i < 17; i++) {
-      setTimeout(function() {
+      document.querySelector(".skip").addEventListener("touchstart", () => {
+        clearTimeout(animation);
+        bubbles = false;
+        moveMsg();
+        document.querySelector("body").classList.remove("scroll-stop");
+      });
+      document.querySelector(".skip").addEventListener("click", () => {
+        clearTimeout(animation);
+        bubbles = false;
+        moveMsg();
+      });
+      function moveMsg() {
         // let marginValue = 100 - i * 6.5;
         document.querySelectorAll(".msg")[i].style.opacity = 1;
         position = 17;
-        document.querySelectorAll(".msg")[i].classList.add("move-up");
+        // document.querySelectorAll(".msg")[i].classList.add("move-up");
         document.querySelectorAll(".msg")[i].style.gridRow = position;
         j = i;
         while (j > 0) {
@@ -153,15 +174,20 @@ function animateChat() {
 
           document.querySelectorAll(".msg")[j].style.gridRow = position;
         }
-
-        document.querySelectorAll(".span-div span").forEach(span => {
-          span.classList.add("animation-dot");
-        });
-        // document.querySelectorAll(".msg")[0].style.marginTop = marginValue + "%";
-        setTimeout(function() {
+        if (bubbles == true) {
+          document.querySelectorAll(".span-div span").forEach(span => {
+            span.classList.add("animation-dot");
+          });
+          // document.querySelectorAll(".msg")[0].style.marginTop = marginValue + "%";
+          setTimeout(function() {
+            document.querySelectorAll(".msg p")[i].style.display = "block";
+            document.querySelectorAll(".msg .span-div")[i].style.display =
+              "none";
+          }, 2000);
+        } else {
           document.querySelectorAll(".msg p")[i].style.display = "block";
           document.querySelectorAll(".msg .span-div")[i].style.display = "none";
-        }, 2000);
+        }
         if (
           i == 16 &&
           getComputedStyle(document.querySelectorAll(".post-chunk")[3], null)
@@ -171,7 +197,11 @@ function animateChat() {
           document.querySelector("#arrow1").classList.remove("hide");
           document.querySelector("#arrow1").style.display = "flex";
         }
-      }, 3000 * i);
+        if (isInViewport(lastMsg)) {
+          body.classList.remove("scroll-stop");
+        }
+      }
+      let animation = setTimeout(moveMsg, timer * i);
     }
   }, 2000);
   let obj = document.querySelector(".animation");

@@ -45,10 +45,10 @@ var slider = function(sliderElement) {
     });
 
     //skip
-    document.querySelector(".skip").addEventListener("click", () => {
-      changeSlide(1);
-      document.querySelector("body").classList.remove("scroll-stop");
-    });
+    // document.querySelector(".skip").addEventListener("click", () => {
+    //   changeSlide(1);
+    //   document.querySelector("body").classList.remove("scroll-stop");
+    // });
 
     // page change animation is done
     detectChangeEnd() &&
