@@ -89,21 +89,31 @@ if (url.includes("team") || url.includes("vision")) {
 }
 
 function displayData() {
-  document.querySelectorAll(".post-container .post div").forEach(div => {
-    if (
-      div.querySelector("h2").textContent == "Vision" ||
-      div.querySelector("h2").textContent == "Mission"
-    ) {
-      let icon = document.createElement("img");
-      icon.setAttribute("alt", div.querySelector("h2").textContent + " icon");
-      icon.classList.add("icon-vission");
-      icon.setAttribute(
-        "src",
-        "Images/" + div.querySelector("h2").textContent + ".png"
-      );
-      div.insertBefore(icon, div.querySelector("h2"));
-    }
-  });
+  if (url.includes("team")) {
+    let teamImg = document.createElement("img");
+    teamImg.setAttribute("alt", "team picture");
+    teamImg.classList.add("team-img");
+    teamImg.setAttribute("src", "Images/team.jpg");
+    document
+      .querySelector(".post")
+      .insertBefore(teamImg, document.querySelector(".team-members"));
+  } else {
+    document.querySelectorAll(".post-container .post div").forEach(div => {
+      if (
+        div.querySelector("h2").textContent == "Vision" ||
+        div.querySelector("h2").textContent == "Mission"
+      ) {
+        let icon = document.createElement("img");
+        icon.setAttribute("alt", div.querySelector("h2").textContent + " icon");
+        icon.classList.add("icon-vission");
+        icon.setAttribute(
+          "src",
+          "Images/" + div.querySelector("h2").textContent + ".png"
+        );
+        div.insertBefore(icon, div.querySelector("h2"));
+      }
+    });
+  }
 }
 
 function typeOfUser(url) {
