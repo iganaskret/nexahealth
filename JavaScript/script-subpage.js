@@ -2,10 +2,10 @@
 let root = document.documentElement;
 const postLink = "https://nexahealth.dk/wp-json/wp/v2/posts?_embed";
 const body = document.querySelector("body");
-// const content = document.querySelector(".schedule-content");
+const content = document.querySelector(".schedule-content");
 const burgerMenu = document.querySelector(".burger-menu");
 const url = window.location.href;
-// const template = document.querySelector("template").content;
+
 typeOfUser(url);
 
 const loaderWrapper = document.querySelector(".wrapper-subpage");
@@ -60,7 +60,7 @@ burgerMenu.addEventListener("click", () => {
 // Fetch and display from Wordpress
 
 if (url.includes("team") || url.includes("vision")) {
-  const template = document.querySelector("template").content;
+  // const template = document.querySelector("template").content;
 
   function loadData() {
     fetch(postLink)
