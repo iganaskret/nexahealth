@@ -707,6 +707,7 @@ nav {
 
 .team img {
   margin-bottom: 50px;
+  /* width: 45%; */
 }
 
 .team .post {
@@ -1007,6 +1008,30 @@ footer img {
 
   .skip {
     display: none;
+  }
+
+  /* Vision */
+  .vision .post-container,
+  .team .post-container {
+    display: block;
+    margin: 0 auto;
+    padding: 40px;
+  }
+
+  /* Team */
+  .team .post-container {
+    padding: 10px;
+    transform: translateY(0);
+  }
+
+  .team img {
+    margin-bottom: 50px;
+    width: 100%;
+  }
+
+  .team .team-members {
+    display: grid;
+    grid-template-columns: 1fr;
   }
 
   /* Subscription medium */

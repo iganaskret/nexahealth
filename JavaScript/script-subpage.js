@@ -77,7 +77,6 @@ if (url.includes("team") || url.includes("vision")) {
       ) {
         //clone
         const clone = template.cloneNode(true);
-        console.log(template);
         //populate
         const postContent = clone.querySelector(".post");
         postContent.innerHTML = post.content.rendered;
