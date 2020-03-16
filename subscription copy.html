@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="favicon.ico/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="favicon.ico/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="favicon.ico/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="favicon.ico/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="favicon.ico/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="favicon.ico/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="favicon.ico/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="favicon.ico/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon.ico/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="favicon.ico/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon.ico/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="favicon.ico/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon.ico/favicon-16x16.png"
+    />
+    <link rel="manifest" href="favicon.ico/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-TileImage"
+      content="favicon.ico/ms-icon-144x144.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <link href="CSS/style.css" type="text/css" rel="stylesheet" media="all" />
+    <title>NEXA Health</title>
+  </head>
+  <body>
+    <!-- Loader -->
+    <div class="wrapper-subpage"></div>
+    <!-- Navigation -->
+    <nav>
+      <div class="burger-menu">
+        <div class="burger"></div>
+      </div>
+      <div>
+        <a href="" id="logo-link">
+          <img class="logo" src="Images/logo-final.png" alt="logo"/>
+          <img class="logo-small" src="Images/logo-just-name-big.png" alt="logo"
+        /></a>
+      </div>
+      <div class="user-type">
+        <a href="subscription.html?citizen" class="citizen-link">Citizen</a>
+        <span> / </span>
+        <a href="subscription.html?health-professional" class="hp-link"
+          >Health professional</a
+        >
+      </div>
+    </nav>
+    <!-- Content of the homepage -->
+    <div>
+      <!-- Main content  -->
+      <main class="subscription">
+        <section>
+          <div class="subscription-form">
+            <form class="form-subpage">
+              <label for="fname" style="white-space:nowrap"
+                >My name is <input type="text" id="fname" name="fname" />
+              </label>
+              <label for="type" style="white-space:nowrap">
+                I am
+
+                <select id="type" name="type">
+                  <option value="citizen" id="citizen">a citizen</option>
+                  <option value="health professional" id="hp"
+                    >a health professional</option
+                  >
+                </select>
+              </label>
+              <label for="email">
+                <span style="white-space:nowrap">
+                  and I am interested in NEXA.
+                </span>
+                <span style="white-space:nowrap"
+                  >I'd like to be updated on my e-mail</span
+                >
+                address
+              </label>
+              <input type="email" id="email" name="email" />
+              <br />
+              <input type="submit" />
+            </form>
+
+            <form
+              action="https://facebook.us19.list-manage.com/subscribe/post"
+              method="POST"
+            >
+              <input type="hidden" name="u" value="c124e7719642d666f0415456c" />
+              <input type="hidden" name="id" value="e59ec301ac" />
+
+              <div id="mergeTable" class="mergeTable">
+                <div class="mergeRow dojoDndItem mergeRow-text" id="mergeRow-1">
+                  <label for="MERGE1">Fornavn</label>
+                  <div class="field-group">
+                    <input
+                      type="text"
+                      name="MERGE1"
+                      id="MERGE1"
+                      size="25"
+                      value=""
+                    />
+                  </div>
+                </div>
+
+                <div
+                  class="mergeRow dojoDndItem mergeRow-dropdown"
+                  id="mergeRow-12"
+                >
+                  <label for="MERGE12"
+                    >type <span class="req asterisk">*</span></label
+                  >
+                  <div class="field-group">
+                    <select class="select-small" id="MERGE12" name="MERGE12"
+                      ><option value="a citizen">a citizen</option
+                      ><option value="a health professional"
+                        >a health professional</option
+                      ></select
+                    >
+                  </div>
+                </div>
+
+                <div
+                  class="mergeRow dojoDndItem mergeRow-email"
+                  id="mergeRow-0"
+                >
+                  <label for="MERGE0"
+                    >E-Mail <span class="req asterisk">*</span></label
+                  >
+                  <div class="field-group">
+                    <input
+                      type="email"
+                      autocapitalize="off"
+                      autocorrect="off"
+                      name="MERGE0"
+                      id="MERGE0"
+                      size="25"
+                      value=""
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="submit_container clear">
+                <input
+                  type="submit"
+                  class="formEmailButton"
+                  name="submit"
+                  value="Subscribe"
+                />
+              </div>
+              <input
+                type="hidden"
+                name="ht"
+                value="4ff77fa1b0d894d471e3c1e588c9eb7dfd1cc739:MTU4NDM2NjQxOC43Nzc2"
+              />
+              <input type="hidden" name="mc_signupsource" value="hosted" />
+            </form>
+          </div>
+        </section>
+      </main>
+      <!-- Footer -->
+      <footer>
+        <div><img src="Images/logo-final-1.png" alt="logo" /></div>
+        <div><a href="mailto:webmaster@example.com">send us an e-mail</a></div>
+        <div>
+          <h4>our partner</h4>
+          <img src="Images/ucph.png" alt="logo of ucph" class="ucph" />
+        </div>
+        <div class="credits"><p>made by Iga Naskręt 2020</p></div>
+      </footer>
+      <!-- Menu -->
+      <div class="menu hide">
+        <ul class="subheader">
+          <li><a href="" id="menu-link">HOMEPAGE</a></li>
+          <li><a href="" class="menu-link-subpage">VISION</a></li>
+          <li><a href="" class="menu-link-subpage">TEAM</a></li>
+          <li class="active">SUBSCRIPTION</li>
+        </ul>
+        <div class="user-type-menu">
+          <a href="subscription.html?citizen" class="citizen-link">Citizen</a>
+          <span> / </span>
+          <a href="subscription.html?health-professional" class="hp-link"
+            >Health professional</a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="JavaScript/script-subpage.js"></script>
+  <script src="JavaScript/subscription.js"></script>
+</html>
