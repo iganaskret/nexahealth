@@ -6,7 +6,7 @@ form.addEventListener("submit", evt => {
   if (form.reportValidity()) {
     const inputData = {
       Name: form.elements.fname.value,
-      Type: form.elements.type.value,
+      Type: form.elements.MERGE12.value,
       Email: form.elements.email.value
     };
     submitFormCode(inputData);
